@@ -1,0 +1,117 @@
+@import 'config';
+@import 'mixins';
+
+
+
+.fullscreen {
+  position: absolute;
+  top: 0; left: 0;
+  width:  100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hidden {
+  display: none;
+}
+
+.block-center {
+  margin-left:  auto;
+  margin-right: auto;
+}
+
+
+a {
+  .smooth;
+  color: @colorBlue;
+  &:hover {
+    color: @colorOrange;
+  }
+}
+
+.locked,
+a.locked:hover,
+a.locked:focus {
+  color: lighten(@colorText,75%);
+  cursor: not-allowed;
+}
+
+.smaller {
+  font-size: 0.8em;
+}
+
+hr {
+  border: 0;
+}
+
+
+//// BY ID
+
+
+#nowebgl_error {
+  display: none;
+  position: absolute;
+  z-index: 5;
+  top:     80px;
+  left:    0;
+  right:   0;
+  width:   502px;
+  margin:  auto;
+  padding: 1em 2em;
+  border:  3px dashed @colorError;
+  background-color: fade(@colorError, 30%);
+}
+
+#game_frame {
+
+}
+
+#game_canvas {
+  background-color: @gameColorBG;
+}
+
+#main_menu {
+  background: @colorBG url(../img/css/bg.png) no-repeat top center;
+  overflow: auto;
+  & > *:first-child {
+    margin-top: 70px;
+  }
+}
+
+#main_menu_game_commands {
+  width: 376px;
+  margin-left: auto;
+  margin-right: auto;
+
+  min-height: 678px;
+
+  ul {
+    font-size: 2em;
+    list-style: none;
+    li {
+      margin: 10px 0;
+    }
+  }
+}
+
+#main_menu_press {
+  .tweet {
+    width: 512px;
+  }
+}
+
+
+
+
+footer {
+  margin-top: 50px;
+  margin-bottom: 20px;
+
+  p.news {
+    color: #787878;
+    position: absolute;
+    top: 0;
+    left: 2em;
+    z-index: 20;
+  }
+}

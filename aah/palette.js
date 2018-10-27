@@ -15,7 +15,7 @@ var paletteGrey = [new RGBA(210,211,215,1),new RGBA(10,10,11,1),new RGBA(0,160,1
 var paletteGold = [new RGBA(245,190,30,1),new RGBA(10,10,11,1),new RGBA(250,45,55,1),new RGBA(110,0,255,1)];
 var paletteBlue = [new RGBA(20,20,75,1),new RGBA(255,255,255,1),new RGBA(255,55,65,1),new RGBA(60,180,255,1)];
 
-var projectPalettes = [paletteLight, paletteDark, paletteLight, palettePink, paletteGrey, paletteBlue, paletteDark, paletteLight, paletteLight, palettePink, paletteDark]; // temp
+var projectPalettes = [paletteDark, paletteBlue, paletteLight, palettePink, paletteGrey, paletteBlue, paletteDark, paletteLight, paletteLight, palettePink, paletteDark]; // temp
 var currentPalette = paletteDark;
 
 var c1 = paletteDark[0].copy();

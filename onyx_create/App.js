@@ -7523,7 +7523,7 @@ define("UI/SettingsPanel", ["require", "exports", "../Device", "./MenuCategory",
                     bookmark: "bookmark creation",
                     tweetText: "Browser-based music making with @onyx - ",
                     links: ["", "", "", ""],
-                    urls: [/*"guide.blokdust.com", "facebook.com/blokdust", "twitter.com/blokdust", "youtube.com/channel/UCukBbnIMiUZBbD4fJHrcHZQ", "github.com/ONYX/ONYX"*/]
+                    urls: ["", "", "", ""]
                 }, this.Populate(this.MenuJson)
             }, SettingsPanel.prototype.Populate = function(json) {
                 var units = App.Unit,
@@ -9783,7 +9783,7 @@ define("Blocks/Sources/Granular", ["require", "exports", "../../Core/Audio/Compo
                     region: 0,
                     spread: 1.5,
                     grainlength: .25,
-                    track: "https://files.blokdust.io/samples/sequence_fuzz_pad2.wav",
+                    track: "https://highestage/github.io/onyx_create/wave/sequence_fuzz_pad2.wav",
                     trackName: "Fuzz Pad 2",
                     user: "ONYX",
                     permalink: ""
@@ -10136,7 +10136,7 @@ define("Blocks/Sources/Sample", ["require", "exports", "./SamplerBase", "../../C
                     loopStart: 0,
                     loopEnd: 0,
                     volume: 11,
-                    track: "https://files.blokdust.io/impulse-responses/teufelsberg01.wav",
+                    track: "https://highestage.github.io/onyx_create/wave/teufelsberg01.wav",
                     trackName: "TEUFELSBERG",
                     user: "Balance Mastering",
                     permalink: ""

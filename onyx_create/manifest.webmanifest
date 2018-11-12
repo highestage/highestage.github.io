@@ -1,0 +1,21 @@
+{
+    "name": "ONYX Create",
+    "short_name": "ONYX Create",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color":"#000000",
+    "theme_color": "#000000",
+    "description": "ONYX create is an audio playground for creating audio using GPU and visual programming language. Users can create and modify audio using oscillators or the SoundCloud Library.",
+    "icons": [
+        {
+            "src": "img/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "img/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ]
+}

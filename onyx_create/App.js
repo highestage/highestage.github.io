@@ -9630,10 +9630,7 @@ define("Stage", ["require", "exports", "./MainScene", "./Splash"], function(requ
 }), define("Core/Visual/ThemeManager", ["require", "exports", "./ColorTheme", "./ThemeChangeEventArgs"], function(require, exports, ColorTheme_1, ThemeChangeEventArgs_1) {
     var ThemeManager = function() {
         function ThemeManager() {
-            this.ThemeChanged = new nullstone.Event, this.Loaded = !1, this.Themes = [new ColorTheme_1.ColorTheme("PENCIL CONTROL", App.Config.PixelPaletteImagePath[2]), new ColorTheme_1.ColorTheme("FJORD", App.Config.PixelPaletteImagePath[1]), new ColorTheme_1.ColorTheme("CONSOLE", App.Config.PixelPaletteImagePath[10], {
-                menu: [3, 5, 7, 4, 6],
-                options: [3, 4, 5, 7, 6]
-            }), new ColorTheme_1.ColorTheme("SEA CUCUMBER", App.Config.PixelPaletteImagePath[9], {
+            this.ThemeChanged = new nullstone.Event, this.Loaded = !1, this.Themes = [new ColorTheme_1.ColorTheme("SYMPHONY", App.Config.PixelPaletteImagePath[2]), new ColorTheme_1.ColorTheme("SYNTHWAVE", App.Config.PixelPaletteImagePath[9], {
                 menu: [3, 9, 10, 4, 6],
                 options: [3, 4, 9, 10, 6]
             })], this._Defaults = {

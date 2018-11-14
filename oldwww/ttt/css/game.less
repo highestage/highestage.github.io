@@ -2,7 +2,7 @@
 @import 'animate';
 
 canvas {
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0); /* mobile webkit */
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0); 
   -webkit-touch-callout: none;
   -webkit-user-drag: none;
   -webkit-user-select: none;
@@ -14,7 +14,7 @@ canvas {
 }
 
 
-//// WIDGETS //
+
 
 .widget {
   color: white;
@@ -27,7 +27,7 @@ canvas {
   .clickable;
 }
 
-// BACK TO MAIN MENU
+
 #ingame_widget_back {
   top:  7px;
   left: 7px;
@@ -37,7 +37,7 @@ canvas {
   .infinitelyAnimated;
 }
 
-// TOGGLE SOUND
+
 #ingame_widget_toggle_sound {
   top:  77px;
   left: 10px;
@@ -48,7 +48,7 @@ canvas {
   }
 }
 
-// GAME RULES
+
 #ingame_widget_help {
   top:  148px;
   left: 10px;
@@ -71,7 +71,7 @@ canvas {
 }
 
 
-//// CROSSHAIR //
+
 
 @crosshairSize: 25px;
 
@@ -85,12 +85,12 @@ canvas {
   margin-top: -1 * @crosshairSize / 2;
   margin-left: -1 * @crosshairSize / 2;
   border-radius: @crosshairSize / 2;
-  background-color: transparent; // will be set by js
+  background-color: transparent; 
   .opacity(0.6);
 }
 
 
-//// FLOATING SHAPES //
+
 
 @paddingShapes: 5px;
 
@@ -128,7 +128,7 @@ canvas {
 }
 
 
-//// TUTORIAL //
+
 
 .tutorial_step {
   pointer-events: none;
@@ -163,7 +163,7 @@ canvas {
 }
 
 
-//// GAME OVER //
+
 
 #game_over_msg {
   position: fixed;

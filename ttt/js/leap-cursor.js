@@ -1,25 +1,4 @@
-/*
 
-This file is from https://github.com/aphex/leap-cursor-library.js
-
-Changelog :
-- LeapManager.exit() method (wip)
-- page scroll when approaching borders
-- disable gestures, for perf
-  * we're collecting them with Jax
-  * we don't need them in the menus
-- made sure that mouse event is cancelable
-
-Notes :
-- This configures leapjs' loop before jax, so we enableGestures: true
-  even if this does not use them.
-- I'm too lazy to properly fork the source ; besides, I'd rather use
-  a lightweight and optimized (not to mention properly unit-tested) version of this
-
-*/
-
-
-/*global Leap*/
 var LeapElement = function(element) {
     this.element = element;
     this.cursor = null;

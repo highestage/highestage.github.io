@@ -3,34 +3,13 @@
 <html>
   <head>
     <meta charset="utf-8">
-
     <title>Triple-T</title>
-
-    <link rel="icon" href="favicon.ico">
-    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
-    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="android-chrome-192x192.png" sizes="192x192">
-    <link rel="apple-touch-icon" sizes="57x57"   href="apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60"   href="apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72"   href="apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76"   href="apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180x180.png">
-    <link rel="manifest"  href="manifest.json">
-    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#ffc40d">
     <meta name="msapplication-TileImage" content="mstile-144x144.png">
     <meta name="theme-color" content="#ffffff">
-
     <link rel="stylesheet" type="text/css" href="css/play.css">
   </head>
-
   <body>
-
     <div id="game_frame" class="fullscreen hidden">
 
       <canvas id="game_canvas" class="fullscreen"></canvas>
@@ -49,17 +28,6 @@
     <div id="game_over_msg" class="btn_exit"><p>Press ESC to exit</p></div>
 
     <div id="noleap_error"><p>No LEAP Motion Controller detected</p></div>
-
-    <div id="nowebgl_error">
-      <h2>OH NOES !</h2>
-      <p data-i18n="error.nowebgl.message">
-        It looks like your device does not support WebGL !<br>
-        We are sorry, you need a webGL-friendly device.
-      </p>
-      <p>
-        <a href="http://get.webgl.org/" data-i18n="error.nowebgl.getwebgl">Get WebGL</a>
-      </p>
-    </div>
 
     <div id="main_menu">
 
@@ -83,7 +51,7 @@
             <div class="hexagon_p60"></div>
             <div class="hexagon_m60"></div>
           </a>
-          <!--<a id="main_menu_start_solo_hard" href="" class="locked start_single_game hexagon" data-jax-action="playHard" title="Play a single player game against the computer (hard)">
+          <a id="main_menu_start_solo_hard" href="" class="locked start_single_game hexagon" data-jax-action="playHard" title="Play a single player game against the computer (hard)">
             <span>Solo<br>(Hard)</span>
             <div class="hexagon_p60"></div>
             <div class="hexagon_m60"></div>
@@ -92,44 +60,29 @@
             <span>Solo<br>(Expert)</span>
             <div class="hexagon_p60"></div>
             <div class="hexagon_m60"></div>
-          </a>-->
+          </a>
         </div>
 
       </section>
 
     </div>
 
-
-    <!-- BELOW IS SOME JAVASCRIPT MAGIC TO GLUE IT ALL -->
-
     <script type="text/javascript" src="js/lazyload.js"></script>
 
     <script type="text/javascript">
 
       
-      var jax, cyx_ui, game_canvas, nw_gui, nw_win;
-      // our functions
+      var jax, ttt_ui, game_canvas, nw_gui, nw_win;
       var is_node_webkit, adjust_canvas_size;
-
-      // We also have access to the following global vars :
-      //   - Jax
-      //   - jQuery
-      //   - screenfull
-
-      // Our Airspace app is a Node-Webkit package
       is_node_webkit = function() {
         return (typeof global !== 'undefined');
       };
 
-      // NODE-WEBKIT UI & WINDOW
       if (is_node_webkit()) {
         nw_gui = require('nw.gui');
         nw_win = nw_gui.Window.get();
         nw_win.focus();
         nw_win.enterFullscreen();
-
-        // Clear our localStorage data if not from this this machine, because
-        // the LEAP review team tests the application before submitting it.
         var machine_id = global.process.env.USERDOMAIN + '-' + global.process.env.USERNAME;
         if (machine_id != window.localStorage.getItem('machine_id')) {
           window.localStorage.clear();
@@ -137,35 +90,32 @@
         }
       }
 
-      // ADJUST TO WINDOW SIZE GRACEFULLY
+
       adjust_canvas_size = function() {
         var w = window.innerWidth, h = window.innerHeight;
         if (game_canvas) { game_canvas.width = w; game_canvas.height = h; }
       };
       window.addEventListener('resize', adjust_canvas_size);
 
-      // Load JAX, Timbre and LEAP, and execute a callback when finished.
+
       LazyLoad.js(['assets/jax.js', 'js/leap-cursor.js', 'js/timbre.js'], function () {
 
-        // ERROR HANDLING
+
         if (!jQuery || typeof Jax === 'undefined' || typeof jQuery.url !== 'function') {
           console.log("", jQuery, Jax, jQuery.url);
           return;
         }
 
-        // DEBUG MODE
+
         window.debug = jQuery.url().param('dbg') || null;
 
-        // PREPARE GAME CANVAS
-        game_canvas = document.getElementById("game_canvas");
-        adjust_canvas_size(); // Make sure canvas is fullscreen
-        // hotfix for node-webkit, MAY not be needed anymore
-        //game_canvas.ondragstart=function(){return false;};
 
-        // NOW, WAIT FOR DOM
+        game_canvas = document.getElementById("game_canvas");
+        adjust_canvas_size(); 
+        
         jQuery().ready(function($) {
 
-          // BUILD JAX CONTEXT (or GTFO)
+
           try {
             jax = new Jax.Context(game_canvas);
           } catch (e) {
@@ -176,16 +126,13 @@
             return;
           }
 
-          // ADJUST TO NODE-WEBKIT
+
           if (is_node_webkit()) {
             $('body').addClass('node-webkit');
           }
 
-          // BUILD AND BIND THE UI
-          // #think not satisfied
-          // The idea was to separate the game controls from the html elements.
-          // disturbing, but we should. The UI does too much internally.
-          cyx_ui = new Cyx.UI.Main(jQuery, jax, {
+          
+          ttt_ui = new Ttt.UI.Main(jQuery, jax, {
              main_menu:          '#main_menu'
             ,game_frame:         '#game_frame'
             ,game_canvas:        '#game_canvas'
@@ -207,7 +154,7 @@
             ,btn_exit:           '.btn_exit'
           });
 
-          // RANDOM EFFECTS ON THE HEXAGONS
+
           var hexagon_animation_classes = [
             'rotate_360', 'rotate_60',
             'keystroke',  'flatten',
@@ -219,66 +166,64 @@
           $('#hexagon_container .hexagon:not(.locked)').addClass(hexagon_animation_class);
 
 
-          // LEAP LOOP CONFIG
-          // /!\ This has priority over Jax's loop configuration
           var leap_loop_opts = {
             enableGestures: true
           };
 
-          // LEAP CURSOR
+
           var leap_manager_opts = {
-            // We only need one cursor
+
             maxCursors: 1,
-            // CSS selector for interactive elements
+
             interactiveSelector: "#main_menu_game_commands a.hexagon:not(.locked)",
-            // Disable meta gestures such as history swipe
+
             enableDefaultMetaGestureActions: false,
             enableMetaGestures: false,
-            // Frame scrolling when cursor approaches frame's edges
+
             enableFrameScrolling: true,
-            // Disable scrollbar scrolling (whatever that is)
+
             enableScrollbarScrolling: false,
-            // Virtual Boundary in which to move your fingers around.
-            // Translates into screen space
+
+
             boundary: {
               top: 350,
               left: -100,
               right: 100,
               bottom: 150
             },
-            // Configuration for cursors
+
             cursorConfig: {
               multitapEnabled: false,
               clickDelay: 1111
             },
-            // Config to pass into the Loop function for the leap
+
             loopConfig: leap_loop_opts
           };
           LeapManager.init(leap_manager_opts);
-          cyx_ui.on('game_enter', function(){
+          ttt_ui.on('game_enter', function(){
             LeapManager.exit();
           });
 
 
-          // DISCONNECTED LEAP ERROR
-          // The loop is (silently) started by the cursor manager lib above
+
+
           if (Leap && Leap.loopController) {
             if (is_node_webkit() && !Leap.loopController.connected()) {
-              cyx_ui.noleap_error.show();
+              ttt_ui.noleap_error.show();
             }
             Leap.loopController.on('deviceAttached', function() {
-              cyx_ui.noleap_error.hide();
+              ttt_ui.noleap_error.hide();
             });
             Leap.loopController.on('deviceRemoved', function() {
-              cyx_ui.noleap_error.show();
+              ttt_ui.noleap_error.show();
             });
           }
 
 
-          // EXTRA KEYBOARD MAPPING ON NODE-WEBKIT
+
           if (nw_win) {
             $(document).on('keydown', function(e){
-              if (!cyx_ui.isGameRunning() && e.which == 27) { // ESC
+              if (!ttt_ui.isGameRunning() && e.which == 27) { // ESC
                 nw_win.close();
               } else if (e.which == 122) { // F11
                 nw_win.toggleFullscreen();
@@ -289,24 +234,19 @@
           }
 
 
-          // THE UI IS READY !
-          cyx_ui.trigger('jax_ready');
+
+          ttt_ui.trigger('jax_ready');
 
 
-          // LAUNCH REPLAY MODE IF ANY
+
           var encodedReplay = jQuery.url().param('replay') || null;
           if (encodedReplay) {
             var data = { controller: new Jax.ReplayGameController };
-            cyx_ui.trigger('game_enter', data);
-            cyx_ui.trigger('game_start', data);
+            ttt_ui.trigger('game_enter', data);
+            ttt_ui.trigger('game_start', data);
           }
 
-
-          // TUTORIAL
-          // Ahem. This obviously is a hack that should be refactored,
-          // but I'm in no mood for duct-taping this in js
-          // when it could be assembled properly in Dart.
-          cyx_ui.on('game_enter', function(){
+          ttt_ui.on('game_enter', function(){
             if (encodedReplay) return;
             var duration = 15555;
             var count_max = 10;
@@ -336,21 +276,6 @@
         });
 
       });
-
-      // Load some images that are used by the graphics card.
-      // Is without effect, as the glitch on the first stone still happens
-      // I'm not sure how to preload textures in the GPU, then... Meh.
-//      var cyx_preloaded_images = [];
-//      function preloadImages (imageSrcs) {
-//        for (var i = 0; i < imageSrcs.length; i++) {
-//          cyx_preloaded_images[i]     = new Image();
-//          cyx_preloaded_images[i].src = imageSrcs[i];
-//        }
-//      }
-//      preloadImages([
-//          "img/uvs/geode/graphite.png",
-//          "img/uvs/geode/anthracite.png"
-//      ]);
 
 
     </script>

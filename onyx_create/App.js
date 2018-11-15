@@ -1,16 +1,4 @@
 var requirejs, require, define;
-window.addEventListener('load', () => {
-    registerSW();
-}, false);
-async function registerSW() {
-    if('serviceWorker' in navigator) {
-        try {
-            await navigator.serviceWorker.register('./sw.js');
-        } catch(err) {
-            console.log('SW registration failed');
-        }
-    }
-}
 (function(global) {
     var req, s, head, baseElement, dataMain, src, interactiveScript, currentlyAddingScript, mainScript, subPath, version = "2.1.22",
         commentRegExp = /(\/\*([\s\S]*?)\*\/|([^:]|^)\/\/(.*)$)/mg,
@@ -7535,7 +7523,7 @@ define("UI/SettingsPanel", ["require", "exports", "../Device", "./MenuCategory",
                     bookmark: "bookmark creation",
                     tweetText: "Browser-based music making with @onyx - ",
                     links: ["", "", "", ""],
-                    urls: [/*"guide.blokdust.com", "facebook.com/blokdust", "twitter.com/blokdust", "youtube.com/channel/UCukBbnIMiUZBbD4fJHrcHZQ", "github.com/ONYX/ONYX"*/]
+                    urls: ["", "", "", ""]
                 }, this.Populate(this.MenuJson)
             }, SettingsPanel.prototype.Populate = function(json) {
                 var units = App.Unit,
@@ -9642,11 +9630,7 @@ define("Stage", ["require", "exports", "./MainScene", "./Splash"], function(requ
 }), define("Core/Visual/ThemeManager", ["require", "exports", "./ColorTheme", "./ThemeChangeEventArgs"], function(require, exports, ColorTheme_1, ThemeChangeEventArgs_1) {
     var ThemeManager = function() {
         function ThemeManager() {
-            this.ThemeChanged = new nullstone.Event, this.Loaded = !1, this.Themes = [new ColorTheme_1.ColorTheme("PENCIL CONTROL", App.Config.PixelPaletteImagePath[2]), 
-                                                                                      new ColorTheme_1.ColorTheme("FJORD", App.Config.PixelPaletteImagePath[1]), new ColorTheme_1.ColorTheme("CONSOLE", App.Config.PixelPaletteImagePath[10], {
-                menu: [3, 5, 7, 4, 6],
-                options: [3, 4, 5, 7, 6]
-            }), new ColorTheme_1.ColorTheme("SEA CUCUMBER", App.Config.PixelPaletteImagePath[9], {
+            this.ThemeChanged = new nullstone.Event, this.Loaded = !1, this.Themes = [new ColorTheme_1.ColorTheme("SYMPHONY", App.Config.PixelPaletteImagePath[2]), new ColorTheme_1.ColorTheme("SYNTHWAVE", App.Config.PixelPaletteImagePath[9], {
                 menu: [3, 9, 10, 4, 6],
                 options: [3, 4, 9, 10, 6]
             })], this._Defaults = {
@@ -9796,7 +9780,7 @@ define("Blocks/Sources/Granular", ["require", "exports", "../../Core/Audio/Compo
                     region: 0,
                     spread: 1.5,
                     grainlength: .25,
-                    track: "https://files.blokdust.io/samples/sequence_fuzz_pad2.wav",
+                    track: "https://highestage/github.io/onyx_create/wave/sequence_fuzz_pad2.wav",
                     trackName: "Fuzz Pad 2",
                     user: "ONYX",
                     permalink: ""
@@ -10149,7 +10133,7 @@ define("Blocks/Sources/Sample", ["require", "exports", "./SamplerBase", "../../C
                     loopStart: 0,
                     loopEnd: 0,
                     volume: 11,
-                    track: "https://files.blokdust.io/impulse-responses/teufelsberg01.wav",
+                    track: "https://highestage.github.io/onyx_create/wave/teufelsberg01.wav",
                     trackName: "TEUFELSBERG",
                     user: "Balance Mastering",
                     permalink: ""

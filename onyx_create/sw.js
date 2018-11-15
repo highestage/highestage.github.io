@@ -1,4 +1,4 @@
-const cacheName = 'ONYX';
+const cacheName = 'ONYX Create';
 const staticAssets = [
     './',
     './index.html',
@@ -222,7 +222,7 @@ self.addEventListener('activate', e => {
 });
 
 self.addEventListener('fetch', async e => {
-    const req = e.request;
+    const.req = e.request;
     const url = new URL(req.url);
     
     if (url.origin === location.origin) {

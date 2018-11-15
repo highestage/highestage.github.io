@@ -1,15 +1,3 @@
-window.addEventListener('load', function() {
-    registerSW();
-}, false);
-async function registerSW() {
-    if ('serviceWorker' in navigator) {
-        try {
-            await navigator.serviceWorker.register('sw.js');
-        } catch(e) {
-            console.log('SW registration failed');
-        }
-    }
-}
 var requirejs, require, define;
 (function(global) {
     var req, s, head, baseElement, dataMain, src, interactiveScript, currentlyAddingScript, mainScript, subPath, version = "2.1.22",

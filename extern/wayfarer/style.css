@@ -1,0 +1,96 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(249, 249, 238);
+}
+
+.container {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    left: 10%;
+    top: 10%;
+}
+
+.item {
+    flex: 2;
+    color: rgb(249, 249, 238);
+}
+.item-platform {
+    text-align: center;
+    width: 100%;
+    top: 70%;
+    position: relative;
+    font-size: 40px;
+    
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 30px;
+    transition: 0.5s;
+    opacity: 0.0;
+}
+.item-text {
+    text-align: center;
+    width: 100%;
+    top: 80%;
+    position: relative;
+    font-size: 40px;
+    
+    font-family: 'Raleway', sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 44px;
+    line-height: 36px;
+    text-transform: uppercase
+}
+
+#i1 {
+    background-image: url(wayfarer1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: 0.5s;
+}
+#i2 {
+    background-image: url(wayfarer2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: 0.5s;
+}
+
+.banner {
+    text-align: center;
+    font-size: 100px;
+    top: 35%;
+    position: absolute;
+    width: 100%;
+    letter-spacing: 5px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    line-height: 18px;
+    text-transform: uppercase;
+    
+    color: rgb(249, 249, 238);
+}
+.info {
+    text-align: left;
+    font-size: 20px;
+    width: 25%;
+    top: 45%;
+    position: relative;
+    left: 37.5%;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 20px;
+    line-height: 30px;
+    
+    color: rgb(249, 249, 238);
+}

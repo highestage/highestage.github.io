@@ -2051,6 +2051,7 @@ a {
       -ms-transform: translateX(-50%);
       transform: translateX(-50%); }
     .feature__fullscreen.is-technologies .fullscreen-image {
+        background-image: url("../files/center.jpg");
       position: relative;
       width: 100%;
       padding-bottom: 56.28%;
@@ -2058,6 +2059,7 @@ a {
       background-position: 0 0;
       background-size: 100% auto; }
       .retina .feature__fullscreen.is-technologies .fullscreen-image {
+          background-image: url("../files/center.jpg");
         background-size: 100% auto; }
     .feature__fullscreen.is-technologies .fullscreen-image::before,
     .feature__fullscreen.is-technologies .fullscreen-image::after {
@@ -2068,6 +2070,7 @@ a {
       height: 100%;
       background-repeat: no-repeat; }
     .feature__fullscreen.is-technologies .fullscreen-image::before {
+        background-image: url("../files/left.jpg");
       left: 0;
       background-position: 100% 0;
       background-size: auto 100%;
@@ -2075,9 +2078,11 @@ a {
       -ms-transform: translateX(-100%);
       transform: translateX(-100%); }
       .retina .feature__fullscreen.is-technologies .fullscreen-image::before {
+          background-image: url("../files/left.jpg");
         background-position: 100% 0;
         background-size: auto 100%; }
     .feature__fullscreen.is-technologies .fullscreen-image::after {
+        background-image: url("../files/right.jpg");
       right: 0;
       background-position: 0 0;
       background-size: auto 100%;
@@ -2085,6 +2090,7 @@ a {
       -ms-transform: translateX(100%);
       transform: translateX(100%); }
       .retina .feature__fullscreen.is-technologies .fullscreen-image::after {
+          background-image: url("../files/right.jpg");
         background-position: 0 0;
         background-size: auto 100%; }
   .feature__fullscreen.is-touch-bar {

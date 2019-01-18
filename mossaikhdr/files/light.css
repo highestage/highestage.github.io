@@ -2064,7 +2064,7 @@ a {
       .retina .feature__fullscreen.is-technologies .fullscreen-image {
           background-image: url("../files/center.jpg");
         background-size: 100% auto; 
-          filter: invert(0.93);
+          filter: invert(0.93); 
 }
     .feature__fullscreen.is-technologies .fullscreen-image::before,
     .feature__fullscreen.is-technologies .fullscreen-image::after {

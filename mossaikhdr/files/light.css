@@ -31,14 +31,14 @@ table {
 .t-hero-title {
   font-size: 73px;
   font-weight: 700;
-  color: #0f0f0f;
+  color: #f0f0f0;
   line-height: 88px;
   letter-spacing: -0.02em; }
 
 .t-hero-subtitle {
   font-size: 44px;
   font-weight: 500;
-  color: #0f0f0f;
+  color: #f0f0f0;
   line-height: 53px;
   letter-spacing: -0.0275em; }
 
@@ -48,7 +48,7 @@ table {
 .t-hero-description {
   font-size: 23px;
   font-weight: 400;
-  color: #333333;
+  color: #dbdbdb;
   line-height: 35px;
   letter-spacing: 0.004em; }
 
@@ -75,14 +75,14 @@ table {
 .t-level-2_name {
   font-size: 21px;
   font-weight: 700;
-  color: #0f0f0f;
+  color: #f0f0f0;
   line-height: 27px;
   letter-spacing: 0.00125em; }
 
 .t-level-2_title {
   font-size: 49px;
   font-weight: 700;
-  color: #0f0f0f;
+  color: #f0f0f0;
   line-height: 59px;
   letter-spacing: -0.016em; }
 
@@ -92,7 +92,7 @@ table {
 .t-level-2_title-s {
   font-size: 21px;
   font-weight: 700;
-  color: #0f0f0f;
+  color: #f0f0f0;
   line-height: 27px;
   letter-spacing: 0.00125em; }
 
@@ -102,7 +102,7 @@ table {
 .t-level-2_description {
   font-size: 20px;
   font-weight: 400;
-  color: #333333;
+  color: #dbdbdb;
   line-height: 32px;
   letter-spacing: 0.002em; }
 
@@ -126,13 +126,13 @@ table {
 .t-level-3_title {
   font-size: 32px;
   font-weight: 700;
-  color: #0f0f0f;
+  color: #f0f0f0;
   line-height: 38px; }
 
 .t-level-3_title-s {
   font-size: 18px;
   font-weight: 700;
-  color: #0f0f0f;
+  color: #f0f0f0;
   line-height: 24px;
   letter-spacing: 0.004em; }
 
@@ -142,7 +142,7 @@ table {
 .t-level-3_description {
   font-size: 17px;
   font-weight: 400;
-  color: #333333;
+  color: #dbdbdb;
   line-height: 27px;
   letter-spacing: 0.004em; }
 
@@ -155,13 +155,13 @@ table {
 .t-level-4_title {
   font-size: 14px;
   font-weight: 700;
-  color: #0f0f0f;
+  color: #f0f0f0;
   line-height: 18px; }
 
 .t-level-4_description {
   font-size: 14px;
   font-weight: 400;
-  color: #333333;
+  color: #dbdbdb;
   line-height: 21px; }
 
 .t-level-4_title + .t-level-4_description {
@@ -296,7 +296,7 @@ table {
 html {
   font-family: -apple-system, BlinkMacSystemFont, "myriad-pro", sans-serif;
   font-weight: 400;
-  background-color: #ffffff;
+  background-color: rgb(17, 17, 17);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%; }
@@ -413,7 +413,7 @@ a {
     z-index: 2;
     font-size: 17px;
     font-weight: 400;
-    color: #0f0f0f;
+    color: #f0f0f0;
     opacity: 0;
     transform: scale(1.1);
     transition: opacity 330ms ease-out, transform 280ms ease-out, color 130ms ease-in-out; }
@@ -463,7 +463,7 @@ a {
     margin-top: 1px;
     font-size: 32px;
     font-weight: 700;
-    color: #0f0f0f;
+    color: #f0f0f0;
     letter-spacing: -0.002em;
     opacity: 0;
     text-align: center;
@@ -478,14 +478,14 @@ a {
     margin-top: 16px;
     font-size: 32px;
     font-weight: 700;
-    color: #0f0f0f;
+    color: #f0f0f0;
     letter-spacing: -0.002em; }
   .notify__description {
     max-width: 450px;
     margin: 9px auto 0;
     padding: 4px 0;
     font-size: 20px;
-    color: #333333;
+    color: #dbdbdb;
     line-height: 32px; }
   .modal .notify__description {
     max-width: 700px; }
@@ -501,7 +501,7 @@ a {
     margin: 2px auto 0;
     font-size: 20px;
     font-weight: 400;
-    color: #333333;
+    color: #dbdbdb;
     text-align: center;
     background-color: transparent;
     border: none;
@@ -609,7 +609,7 @@ a {
     opacity: 0.5; }
   .explore__text {
     font-size: 13px;
-    color: #0f0f0f;
+    color: #f0f0f0;
     line-height: 22px;
     letter-spacing: -0.005em; }
   .explore__arrow {
@@ -694,7 +694,7 @@ a {
 .app__company, .app__name, .app__version {
   font-size: 22px;
   font-weight: 500;
-  color: #0f0f0f;
+  color: #f0f0f0;
   line-height: 58px;
   letter-spacing: -0.018em; }
 .app__version {
@@ -1324,7 +1324,7 @@ a {
   .subnavigation__link {
     display: inline-block;
     font-size: 13px;
-    color: #0f0f0f;
+    color: #f0f0f0;
     line-height: 29px;
     letter-spacing: -0.005em;
     will-change: auto;
@@ -2499,7 +2499,7 @@ a {
     margin-top: 16px;
     font-size: 32px;
     font-weight: 700;
-    color: #0f0f0f;
+    color: #f0f0f0;
     letter-spacing: -0.002em; }
   .buy .notify__btn.btn--big {
     margin: 22px auto 0;
@@ -2546,7 +2546,7 @@ a {
 
 .copyright__text {
   font-size: 12px;
-  color: #333333;
+  color: #dbdbdb;
   text-align: center;
   opacity: 0.5; }
 .copyright__text + .copyright__text {
@@ -2640,11 +2640,11 @@ a {
     margin-top: 28px;
     font-size: 32px;
     font-weight: 700;
-    color: #0f0f0f; }
+    color: #f0f0f0; }
   .p-404 .error-page__description {
     margin-top: 19px;
     font-size: 20px;
-    color: #333333; }
+    color: #dbdbdb; }
 
 .blog .content {
   padding-top: 180px; }
@@ -2849,7 +2849,7 @@ a {
 .page-navigation {
   margin-top: 71px;
   font-size: 14px;
-  color: #0f0f0f;
+  color: #f0f0f0;
   text-align: center; }
   .page-navigation .current {
     font-weight: 600; }
@@ -2915,7 +2915,7 @@ a {
 .comments-form__author {
   font-size: 14px;
   font-weight: 700;
-  color: #0f0f0f;
+  color: #f0f0f0;
   line-height: 38px;
   letter-spacing: -0.028em; }
 
@@ -2926,7 +2926,7 @@ a {
   margin: 0;
   border: none;
   font-size: 14px;
-  color: #0f0f0f;
+  color: #f0f0f0;
   outline: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -2940,7 +2940,7 @@ a {
   margin: 0;
   border: none;
   font-size: 14px;
-  color: #0f0f0f;
+  color: #f0f0f0;
   outline: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -3048,7 +3048,7 @@ a {
 .comment__body {
   font-size: 17px;
   font-weight: 400;
-  color: #333333;
+  color: #dbdbdb;
   line-height: 27px;
   letter-spacing: 0.004em; }
 
@@ -3108,7 +3108,7 @@ a {
     margin-top: 8px;
     font-size: 16px;
     font-weight: 600;
-    color: #0f0f0f;
+    color: #f0f0f0;
     line-height: 18px; }
   .ad__bottom + .footer .footer__copyright {
     margin-top: 185px; }
@@ -3119,7 +3119,7 @@ a {
     max-width: 820px;
     margin: 65px auto 0;
     text-align: center;
-    color: #0f0f0f; }
+    color: #f0f0f0; }
 
 .main-header.is-fixed,
 .main-nav.is-fixed {
@@ -3606,7 +3606,7 @@ a {
 .release-notes__date {
   margin-top: 4px;
   font-size: 17px;
-  color: #333333;
+  color: #dbdbdb;
   line-height: 1.25;
   letter-spacing: 0.002em;
   opacity: 0.5; }
@@ -3685,7 +3685,7 @@ a {
   margin-top: 4px;
   font-size: 17px;
   font-weight: 400;
-  color: #333333;
+  color: #dbdbdb;
   line-height: 1.62;
   letter-spacing: 0.002em; }
 .release-notes__feature-more {
@@ -3712,14 +3712,14 @@ a {
   display: flex;
   font-size: 14px;
   font-weight: 400;
-  color: #333333;
+  color: #dbdbdb;
   line-height: 1.57;
   letter-spacing: 0.004em; }
   .release-notes__notes-description::before {
     content: '•';
     flex: 0 0 auto;
     margin-right: 4px;
-    color: #333333; }
+    color: #dbdbdb; }
 .release-notes__notes-title + .release-notes__notes-description {
   margin-top: 17px; }
 .release-notes__notes-description + .release-notes__notes-description {
@@ -3771,7 +3771,7 @@ a {
     z-index: 2;
     font-size: 17px;
     font-weight: 400;
-    color: #0f0f0f;
+    color: #f0f0f0;
     opacity: 0;
     transform: scale(1);
     transition: opacity 110ms ease-out, transform 280ms ease-out, color 130ms ease-in-out; }

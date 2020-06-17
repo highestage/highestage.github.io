@@ -1,0 +1,26 @@
+.page-1 {
+    position: absolute;
+    top: 150px;
+    background-color: var(--d-background-color);
+    height: 150%;
+}
+.page-1>h4 {
+    top: 80%;
+}
+.page-1>.img-big {
+    height: 80%;
+}
+.page-2 {
+    position: absolute;
+    top: calc(150px + 150%);
+    background-color: var(--d-background-color);
+}
+.page-2>h2 {
+    top: 42%;
+}
+.page-2>h4 {
+    top: 55%;
+}
+.bottom-banner {
+    top: calc(150px + 150% + 100%);
+}

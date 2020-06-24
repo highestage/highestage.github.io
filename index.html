@@ -1,669 +1,347 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Ayush Aggarwal - Highestage</title>
-        <meta name="description" content="Creative design &amp; code.">
-        <script src="aah/jquery.min.js"></script>
-        <script type="text/javascript" src="aah/tween.min.js"></script>
-        <script type="text/javascript" src="aah/perlin-simplex.js"></script>
-        <script type="text/javascript" src="aah/tombola.js"></script>
-        <script type="text/javascript" src="aah/colorflex.js"></script>
-        <script type="text/javascript" src="aah/jqueryEasing.js"></script>
-
-
-        <script type="text/javascript" src="aah/objects.js"></script>
-        <script type="text/javascript" src="aah/main.js"></script>
-        <script type="text/javascript" src="aah/metrics.js"></script>
-
-        <script type="text/javascript" src="aah/retinaImages.js"></script>
-        <script type="text/javascript" src="aah/menu.js"></script>
-        <script type="text/javascript" src="aah/navigator.js"></script>
-        <script type="text/javascript" src="aah/logoAnimate.js"></script>
-        <script type="text/javascript" src="aah/scrollControl.js"></script>
-        <script type="text/javascript" src="aah/palette.js"></script>
-        
-        <link href="aah/css.css" rel="stylesheet">
-        <link href="aah/style.css" rel="stylesheet" type="text/css">
-        <meta name="theme-color" content="#000000"/>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" name="viewport">
+        <meta content="ie=edge" http-equiv="X-UA-Compatible">
+            <script src="static\js\rally.min.js"></script>
+            <link href="static\css\rally.min.css" rel="stylesheet">
+        <title>Portfolio - Ayush Aggarwal</title>
+        <meta name="description" content="Rally is an interactive product studio specializing in UX/UI design and front-end development, building beautiful products and software with brands like Google, Nike, and National Geographic.">
+        <meta content="summary_large_image" name="twitter:card">
+        <meta content="@letsgorally" name="twitter:site">
+        <meta name="twitter:title" content="RALLY">
+        <meta name="twitter:description" content="Rally is an interactive product studio specializing in UX/UI design and front-end development, building beautiful products and software with brands like Google, Nike, and National Geographic.">
+        <meta name="twitter:image" content="https://rally-media.s3.amazonaws.com/social/tw-card-rally.png">
+        <meta property="og:title" content="RALLY">
+        <meta property="og:description" content="Rally is an interactive product studio specializing in UX/UI design and front-end development, building beautiful products and software with brands like Google, Nike, and National Geographic.">
+        <meta property="og:image" content="https://rally-media.s3.amazonaws.com/social/fb-card-rally.png">
+        <style>
+            #pages h3 {
+                top: -50px;
+            }
+            .technologies {
+                font-size: 12px;
+                text-transform: uppercase;
+            }
+        </style>
     </head>
-<body onresize="resize()" style="opacity: 1;">
-
-<div id="background" class="bg" style="background-color: rgb(250, 250, 240);"></div>
-
-
-<div id="menu" class="bg foreground mid" style="background-color: rgb(250, 250, 240); color: rgb(10, 10, 11);">
-    <div class="menuBlock">
-        <a class="menuLink" href="#p1"><div class="linkLine sub">01</div>Achievements</a>
-        <a class="menuLink" href="#p4"><div class="linkLine sub">02</div>Internships</a>
-        <a class="menuLink" href="#p6"><div class="linkLine sub">03</div>Projects</a>
-    </div>
-    <div class="menuBlock">
-        <a class="menuLink" href="#about"><div class="linkLine sub">01</div>About</a>
-        <a class="menuLink" href="oldwww/index.html" target="_blank"><div class="linkLine sub">02</div>Old Website</a>
-    </div>
-    <div class="menuBlock">
-        <a class="menuLink" href="http://twitter.com/highestage" target="_blank"><div class="linkLine sub">01</div>Twitter</a>
-        <a class="menuLink" href="http://github.com/highestage" target="_blank"><div class="linkLine sub">02</div>Github</a>
-    </div>
-
-</div>
-<header class="bg" style="background-color: rgb(250, 250, 240);">
-    <div id="topMenu">
-        <div id="topMenuButton">
-            <div class="topMenuText mid foreground" style="color: rgb(10, 10, 11);">Menu</div>
-            <div class="topMenuIcon">
-                <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="menuIconB  highlight2" style="color: rgb(0, 140, 230);">
-                    <path id="arrow1" d="M34 44 L50 60 L66 44" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path>
+    <body class="fonts-loading">
+        <canvas id="ribbon"></canvas>
+        <!-- <div id="logo">
+            <a class="no-barba" href="index.html">
+                <svg height="11.375" viewbox="0 0 43.812 11.375" width="43.812" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M69.38,55.682H65.728L62.959,51.3h-0.03v4.378H60V44.3h4.385c2.23,0,3.921,1.072,3.921,3.5a3.056,3.056,0,0,1-2.47,3.216Zm-6.45-6.28h0.285c0.958,0,2.035-.181,2.035-1.419s-1.077-1.419-2.035-1.419H62.929V49.4Zm9.519,4.3L71.67,55.682H68.557L72.9,44.3h3.2l4.25,11.383H77.222L76.489,53.7H72.448Zm2.05-5.888h-0.03L73.256,51.44H75.7Zm9.4,5.359h3.517v2.506h-6.45V44.3H83.9v8.877Zm7.109,0h3.517v2.506H88.073V44.3h2.933v8.877Zm1.56-8.877h3.517l2.111,3.095L100.3,44.3h3.517l-4.16,5.918v5.465H96.726V50.217Z" fill-rule="evenodd" fill="#1b1b1b" transform="translate(-60 -44.313)"></path>
                 </svg>
-                <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="menuIconA  highlight1" style="color: rgb(250, 45, 55);">
-                    <path id="arrow2" d="M34 44 L50 60 L66 44" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path>
-                </svg>
+            </a>
+        </div> -->
+        <div id="logo">
+            <a href="mailto:interactivesavage@gmail.com">Contact</a>
+        </div>
+        <div id="hire-us">
+            <a href="mailto:interactivesavage@gmail.com">Ayush Aggarwal</a>
+        </div>
+
+    <a href="#" id="menu-button" style="display: none;">
+        <div></div>
+        <div></div>
+        <div></div>
+    </a>
+
+    <div id="menu">
+        <div id="menu-wrapper">
+            <ul id="menu-items">
+                <li data-section="work">
+                    <a class="no-barba" href="index.html">Work</a>
+                </li>
+            </ul>
+        </div>
+
+        <div id="follow-bar">
+            <div id="follow">
+                <p>Follow</p>
+                <span></span>
             </div>
+            <a class="follow-icon" href="https://twitter.com/highestage" target="_blank">
+                <svg height="16px" viewbox="0 0 16 16" width="16px" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.000,2.471 C15.411,2.739 14.779,2.918 14.115,3.001 C14.793,2.584 15.313,1.925 15.558,1.140 C14.924,1.526 14.221,1.805 13.473,1.956 C12.875,1.302 12.021,0.894 11.077,0.894 C9.265,0.894 7.795,2.400 7.795,4.257 C7.795,4.521 7.824,4.778 7.880,5.024 C5.152,4.885 2.732,3.545 1.114,1.509 C0.831,2.006 0.669,2.584 0.669,3.201 C0.669,4.367 1.249,5.397 2.129,6.000 C1.592,5.982 1.085,5.831 0.643,5.580 C0.642,5.594 0.642,5.608 0.642,5.622 C0.642,7.251 1.774,8.612 3.275,8.920 C3.000,8.997 2.710,9.039 2.411,9.039 C2.199,9.039 1.994,9.018 1.793,8.978 C2.211,10.314 3.423,11.288 4.860,11.314 C3.736,12.217 2.321,12.754 0.783,12.754 C0.518,12.754 0.257,12.738 -0.000,12.707 C1.452,13.661 3.178,14.218 5.032,14.218 C11.070,14.218 14.372,9.093 14.372,4.647 C14.372,4.502 14.369,4.357 14.362,4.212 C15.003,3.737 15.560,3.145 16.000,2.471 Z" fill-rule="evenodd"></path>
+                </svg>
+            </a>
         </div>
     </div>
-</header>
 
-<div id="frame" class="bg" style="background-color: rgb(250, 250, 240);"></div>
+    <script>
+        if (location.hostname.indexOf('rally') == -1) {
+            // Site.toggleGrid();
+            // Site.toggleStats();
+        }
 
-<div id="logo" class="foreground" style="color: rgb(10, 10, 11);">
-    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-        <defs>
-            <clippath id="logoMaskPath">
-                <path id="logoMask" d="M100 0  L0 0  L 0 100  L100 100  Z" fill="none"></path>
-            </clippath>
-        </defs>
-        <path id="logoPath" d="M16.75 18.7  L2.5 18.7  L 41.6 98.5  L55.9 98.5  L16.75 18.7 M55.9 98.5  L55.9 43.44  M44.06 18.7  L44.06 73.76 M44.06 18.7  L83.25 98.5  L97.5 98.5  L 58.31 18.7  L44.06 18.7" vector-effect="non-scaling-stroke" stroke="currentColor" stroke-width="1.1" fill="none" clip-path="url(#logoMaskPath)"></path>
-    </svg>
-</div>
+        Ribbon.init(document.getElementById('ribbon'));
+    </script>
 
-
-<div id="navigator" class="foreground" style="color: rgb(10, 10, 11);">
-    <a id="nav1" class="navLink hi hello" href="#p1">
-        <svg viewBox="0 0 100 100" preserveAspectRatio="none"><circle cx="50" cy="50" r="2" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></circle></svg>
-        <svg class="navLinkBox" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M50 25 L75 50 L50 75 L25 50 z" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path></svg>
-        <div class="navTag bg sub" style="background-color: rgb(250, 250, 240);">WWDC 2017</div>
-    </a>
-    <a id="nav2" class="navLink hi" href="#p2">
-        <svg viewBox="0 0 100 100" preserveAspectRatio="none"><circle cx="50" cy="50" r="2" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></circle></svg>
-        <svg class="navLinkBox" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M50 25 L75 50 L50 75 L25 50 z" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path></svg>
-        <div class="navTag bg sub" style="background-color: rgb(250, 250, 240);">WWDC 2016</div>
-    </a>
-    <a id="nav3" class="navLink hi" href="#p3">
-        <svg viewBox="0 0 100 100" preserveAspectRatio="none"><circle cx="50" cy="50" r="2" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></circle></svg>
-        <svg class="navLinkBox" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M50 25 L75 50 L50 75 L25 50 z" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path></svg>
-        <div class="navTag bg sub" style="background-color: rgb(250, 250, 240);">IGF 2017</div>
-    </a>
-    <a id="nav4" class="navLink hi" href="#p4">
-        <svg viewBox="0 0 100 100" preserveAspectRatio="none"><circle cx="50" cy="50" r="2" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></circle></svg>
-        <svg class="navLinkBox" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M50 25 L75 50 L50 75 L25 50 z" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path></svg>
-        <div class="navTag bg sub" style="background-color: rgb(250, 250, 240);">GitHub Game Off</div>
-    </a>
-    <a id="nav5" class="navLink hi" href="#p5">
-        <svg viewBox="0 0 100 100" preserveAspectRatio="none"><circle cx="50" cy="50" r="2" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></circle></svg>
-        <svg class="navLinkBox" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M50 25 L75 50 L50 75 L25 50 z" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path></svg>
-        <div class="navTag bg sub" style="background-color: rgb(250, 250, 240);">PlayStation</div>
-    </a>
-    <a id="nav6" class="navLink hi" href="#p6">
-        <svg viewBox="0 0 100 100" preserveAspectRatio="none"><circle cx="50" cy="50" r="2" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></circle></svg>
-        <svg class="navLinkBox" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M50 25 L75 50 L50 75 L25 50 z" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path></svg>
-        <div class="navTag bg sub" style="background-color: rgb(250, 250, 240);">Sunside Games</div>
-    </a>
-    <a id="nav7" class="navLink hi" href="#p7">
-        <svg viewBox="0 0 100 100" preserveAspectRatio="none"><circle cx="50" cy="50" r="2" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></circle></svg>
-        <svg class="navLinkBox" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M50 25 L75 50 L50 75 L25 50 z" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path></svg>
-        <div class="navTag bg sub" style="background-color: rgb(250, 250, 240);">Spectrum HDR</div>
-    </a>
-    <a id="nav8" class="navLink hi" href="#p8">
-        <svg viewBox="0 0 100 100" preserveAspectRatio="none"><circle cx="50" cy="50" r="2" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></circle></svg>
-        <svg class="navLinkBox" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M50 25 L75 50 L50 75 L25 50 z" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path></svg>
-        <div class="navTag bg sub" style="background-color: rgb(250, 250, 240);">ONYX Create</div>
-    </a>
-    <a id="nav9" class="navLink hi" href="#p9">
-        <svg viewBox="0 0 100 100" preserveAspectRatio="none"><circle cx="50" cy="50" r="2" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></circle></svg>
-        <svg class="navLinkBox" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M50 25 L75 50 L50 75 L25 50 z" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path></svg>
-        <div class="navTag bg sub" style="background-color: rgb(250, 250, 240);">Constant VR</div>
-    </a>
-    <a id="nav10" class="navLink hi" href="#p10">
-        <svg viewBox="0 0 100 100" preserveAspectRatio="none"><circle cx="50" cy="50" r="2" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></circle></svg>
-        <svg class="navLinkBox" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M50 25 L75 50 L50 75 L25 50 z" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path></svg>
-        <div class="navTag bg sub" style="background-color: rgb(250, 250, 240);">Sapphire StreamWorks</div>
-    </a>
-    <a id="nav11" class="navLink hi" href="#p11">
-        <svg viewBox="0 0 100 100" preserveAspectRatio="none"><circle cx="50" cy="50" r="2" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></circle></svg>
-        <svg class="navLinkBox" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M50 25 L75 50 L50 75 L25 50 z" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path></svg>
-        <div class="navTag bg sub" style="background-color: rgb(250, 250, 240);">Triple-T</div>
-    </a>
-    <a id="nav12" class="navLink hi" href="#p11">
-        <svg viewBox="0 0 100 100" preserveAspectRatio="none"><circle cx="50" cy="50" r="2" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></circle></svg>
-        <svg class="navLinkBox" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M50 25 L75 50 L50 75 L25 50 z" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path></svg>
-        <div class="navTag bg sub" style="background-color: rgb(250, 250, 240);">Aureole</div>
-    </a>
-</div>
-
-<div id="main" class="foreground" style="color: rgb(10, 10, 11);">
-    <article id="p1">
-        <h3>WWDC 2017 Scholarship Winner</h3>
-        <div class="cols">
-            <div class="left">
-                <div class="tagText sub">ACHIEVEMENT <br/><br/>Swift Playgrounds, Metal, History, Interactive Experience, Audio</div>
-            </div>
-            <p>Developed SACK OF ROME as WWDC 2017 Scholarship application on Swift Playrgounds. Used Metal API for 3D rendering, with support for 3D audio in the Interactive Experience.</p>
-        </div>
-
-
-        <div class="gallery">
-            <div class="number2">
-                <div class="no">01</div>
-                <div class="rule">
-                    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-                        <path d="M0 1 L100 1" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path>
-                    </svg>
-                </div>
-                <div class="total">12</div>
-            </div>
-            <img src="aah/wwdc2017.jpg">
-            <div class="double">
-            </div>
-            <div class="double">
-            </div>
-        </div>
-    </article>
-
-
-    <article id="p2">
-        <h3>WWDC 2016 Scholarship Winner</h3>
-
-        <div class="cols">
-
-            <div class="left">
-                <div class="tagText sub">ACHIEVEMENT <br/><br/>Swift, Metal, Metal Performance Shaders, Photo Editor, macOS, OpenCL, GCD</div>
-            </div>
-
-            <p>Submitted a photo editor as the WWDC 2016 Scholarship application. Developed using Swift and Metal, the editor can edit RAW, JPEG, PNG and TIFF.</p>
-
-        </div>
-
-
-        <div class="gallery">
-            <div class="number2">
-                <div class="no">02</div>
-                <div class="rule">
-                    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-                        <path d="M0 1 L100 1" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path>
-                    </svg>
-                </div>
-                <div class="total">11</div>
-            </div>
-            <img src="aah/wwdcapp1.png">
-            <img src="aah/wwdcapp2.png">
-            <div class="double">
-                <img src="aah/wwdcapp3.png">
-                <img src="aah/wwdcapp4.png">
-            </div>
-        </div>
-    </article>
-
-
-    <article id="p3">
-        <h3>Independent Games Festival 2017 - Wayfarer</h3>
-
-        <div class="cols">
-
-            <div class="left">
-                <div class="tagText sub">ACHIEVEMENT <br/><br/>Unreal Engine 4, macOS, Windows, Linux, ChromeOS, RPG, Tower Defence, Low-Poly</div>
-            </div>
-
-            <p>Honorary student mention at INDEPENDENT GAMES FESTIVAL 2017 for the game Wayfarer. The game is a RPG developed using Unreal Engine 4 with a low-poly design.</p>
-
-        </div>
-
-        <div class="gallery">
-            <div class="number2">
-                <div class="no">03</div>
-                <div class="rule">
-                    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-                        <path d="M0 1 L100 1" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path>
-                    </svg>
-                </div>
-                <div class="total">12</div>
-            </div>
-            <img src="aah/wayfarer1.png">
-            <img src="aah/wayfarer2.png">
-            <div class="double">
-                <img src="aah/wayfarer3.png">
-                <img src="aah/wayfarer4.png">
-            </div>
-
-        </div>
-    </article>
+    <div id="wrapper">
+        <div class="page-content home-page"> 
+        <ul id="bullets" style="--selection-color: rgba(240,200,84,0.25);">
+                <li><a href="#wwdc-17"><span>W</span></a></li>
+                <li><a href="#wwdc-16"><span>W</span></a></li>
+                <li><a href="#igf-17"><span>I</span></a></li>
+                <li><a href="#github-game-off-16"><span>G</span></a></li>
+                <li><a href="#lou-2"><span>L</span></a></li>
+                <li><a href="#abducted"><span>A</span></a></li>
+                <li><a href="#spectre-hdr"><span>S</span></a></li>
+                <li><a href="#irix-pro"><span>I</span></a></li>
+                <li><a href="#onyx"><span>O</span></a></li>
+                <li><a href="#constant-vr"><span>C</span></a></li>
+                <li><a href="#triple-t"><span>T</span></a></li>
+                <li><a href="#aureole"><span>A</span></a></li>
+                <li><a href="#aureole"><span>O</span></a></li>
+                <li><a href="#aureole"><span>O</span></a></li>
+        </ul>
+        <ul id="pages">
+            <li id="wwdc-17" class="page " style="--highlight-primary: #f0c854; --selection-color: rgba(240,200,84,0.25);" data-slug="wwdc-17" data-primarycolor="#fcd259" data-secondarycolor="#e3be4f" data-midcolor="#f0c854" data-selection-color="rgba(240,200,84,0.25)">
+                <a>
+                    <h2>WWDC 2017</h2>
+                    <h3>Achievement<br>Apple - WWDC Scholarship Winner</h3>
+                    <p>
+                        Developed SACK OF ROME as WWDC 2017 Scholarship application on Swift Playgrounds. Used Metal API for 3D rendering, with support for 3D audio in the Interactive Experience.
+                        <br><br><span class="technologies">Swift Playgrounds, Metal, History, Interactive Experience, Audio</span>
+                    </p>
+                    <div class="arrow" style="display: none;">
+                        <div class="circle"></div><img src="/static/images/home-arrow.svg"><div class="spine"></div>
+                    </div>
+                </a>
+            </li>
+            <li id="wwdc-16" class="page " style="--highlight-primary: #f152d8; --selection-color: rgba(241,82,216,0.25);" data-slug="wwdc-16" data-primarycolor="#fe57e4" data-secondarycolor="#e34dcc" data-midcolor="#f152d8" data-selection-color="rgba(241,82,216,0.25)">
+                <a>
+                    <h2>WWDC 2016</h2>
+                    <h3>Achievement<br>Apple - WWDC Scholarship Winner</h3>
+                    <p>
+                        Submitted a photo editor as the WWDC 2016 Scholarship application. Developed using Swift and Metal, the editor can edit RAW, JPEG, PNG and TIFF.
+                        <br><br><span class="technologies">Swift, Metal, Metal Performance Shaders, Photo Editor, MacOS, OpenCL, GCD</span>
+                    </p>
+                    <div class="arrow" style="display: none;">
+                        <div class="circle"></div><img src="static/images/home-arrow.svg"><div class="spine"></div>
+                    </div>
+                </a>
+            </li>
+            
+                <li id="igf-17" class="page " style="--highlight-primary: #bbd5dc; --selection-color: rgba(187,213,220,0.25);" data-slug="igf-17" data-primarycolor="#C6E1E8" data-secondarycolor="#b0c8cf" data-midcolor="#bbd5dc" data-selection-color="rgba(187,213,220,0.25)">
+                    <a href="https://igf.com" target="_blank">
+                        <h2>IGF 2017</h2>
+                        <h3>Achievement<br>Independent Games Festival - Honorary Student Mention</h3>
+                        <p>
+                            Honorary student mention at INDEPENDENT GAMES FESTIVAL 2017 for the game Wayfarer. The game is a RPG developed using Unreal Engine 4 with a low-poly design.
+                            <br><br><span class="technologies">Unreal Engine 4, MacOS, Windows, Linux, ChromeOS, RPG, Tower Defence, Low-Poly</span>
+                        </p>
+                        <div class="arrow">
+                            <div class="circle"></div><img src="static/images/home-arrow.svg"><div class="spine"></div>
+                        </div>
+                    </a>
+                </li>
+            
+                <li id="github-game-off-16" class="page " style="--highlight-primary: #b89360; --selection-color: rgba(184,147,96,0.25);" data-slug="github-game-off-16" data-primarycolor="#c5a06d" data-secondarycolor="#aa8652" data-midcolor="#b89360" data-selection-color="rgba(184,147,96,0.25)">
+                    <a>
+                        <h2>GitHub Game-Off 2016</h2>
+                        <h3>Achievement<br>Runner-Up</h3>
+                        <p>
+                            Ranked 2nd in the 2016 GitHub Game Off Competition for CONSTANT.
+                            <br><br><span class="technologies">Unreal Engine 4, Rift, Vive, Vulkan, Metal, Audio, Procedural</span>
+                        </p>
+                        <div class="arrow" style="display: none;">
+                            <div class="circle"></div><img src="static/images/home-arrow.svg"><div class="spine"></div>
+                        </div>
+                    </a>
+                </li>
+            
+                <li id="lou-2" class="page" style="--highlight-primary: #7401f0; --selection-color: rgba(116,1,240,0.25);" data-slug="lou-2" data-primarycolor="#7b00ff" data-secondarycolor="#6d02e0" data-midcolor="#7401f0" data-selection-color="rgba(116,1,240,0.25)">
+                    <a href="https://www.naughtydog.com" target="_blank">
+                        <h2>Last of Us II</h2>
+                        <h3>Internship<br>Playstation - Naughty Dog Studios - 2018</h3>
+                        <p>
+                            Interned at PLAYSTATION / Sony Interactive Entertainment from April to October 2018. Developed a photorealism module for the ICE Rendering Engine using procedural AI via Active Foreground Neural Network. Project developed in-house using Vulkan API and C++.
+                            <br><br><span class="technologies">Vulkan, C++, OpenCL, PS4, Artificial Intelligence</span>
+                        </p>
+                        <div class="arrow">
+                            <div class="circle"></div><img src="static/images/home-arrow.svg"><div class="spine"></div>
+                        </div>
+                    </a>
+                </li>
+            
+                <li id="abducted" class="page " style="--highlight-primary: #3c5df1; --selection-color: rgba(60,93,241,0.25);" data-slug="abducted" data-primarycolor="#4264FB" data-secondarycolor="#3556e7" data-midcolor="#3c5df1" data-selection-color="rgba(60,93,241,0.25)">
+                    <a>
+                        <h2>Abducted</h2>
+                        <h3>Internship<br>Sunside Games - 2018</h3>
+                        <p>
+                            Interned at SUNSIDE GAMES from February to April 2018. Worked as Level Designer and Gameplay Programmer for the game ABDUCTED, developed using Unreal Engine 4.
+                            <br><br><span class="technologies">Unreal Engine 4, IOS, MacOS, Metal, C++</span>
+                        </p>
+                        <div class="arrow" style="display: none;">
+                            <div class="circle"></div><img src="static/images/home-arrow.svg"><div class="spine"></div>
+                        </div>
+                    </a>
+                </li>
+            
+                <li id="spectre-hdr" class="page " style="--highlight-primary: #ec594b; --selection-color: rgba(236,89,75,0.25);" data-slug="spectre-hdr" data-primarycolor="#FF6152" data-secondarycolor="#D85144" data-midcolor="#ec594b" data-selection-color="rgba(236,89,75,0.25)">
+                    <a href="" target="_blank">
+                        <h2>Spectre HDR</h2>
+                        <h3>Project<br>Photo Editor</h3>
+                        <p>
+                            SPECTRUM HDR is a HDR photo editor for macOS systems. Developed using Swift and Metal, the editor uses CoreML for ML based image edits and manipulations.
+                            <br><br><span class="technologies">Swift, Metal, Metal Shaders, MacOS, CoreML, GCD, Layers, OpenCL, Core Image, 64-Bit</span>
+                        </p>
+                        <div class="arrow">
+                            <div class="circle"></div><img src="static/images/home-arrow.svg"><div class="spine"></div>
+                        </div>
+                    </a>
+                </li>
+            
+                <li id="irix-pro" class="page " style="--highlight-primary: #ec2a5b; --selection-color: rgba(236,42,91,0.25);" data-slug="irix-pro" data-primarycolor="#ff3366" data-secondarycolor="#d9204f" data-midcolor="#ec2a5b" data-selection-color="rgba(236,42,91,0.25)">
+                    <a href="https://studioirix.github.io" target="_blank">
+                        <h2>Irix Pro</h2>
+                        <h3>Project<br>Photo Editor</h3>
+                        <p>
+                            Irix Pro photo editor for macOS systems. Developed using Swift and Metal, the editor uses CoreML for ML based image edits and manipulations.
+                            <br><br><span class="technologies">Swift, Metal, Metal Shaders, MacOS, CoreML, GCD, Layers, OpenCL, Core Image, 64-Bit</span>
+                        </p>
+                        <div class="arrow">
+                            <div class="circle"></div><img src="static/images/home-arrow.svg"><div class="spine"></div>
+                        </div>
+                    </a>
+                </li>
+            
+                <li id="onyx" class="page client-hidden" style="--highlight-primary: #9b5ae6; --selection-color: rgba(155,90,230,0.25);" data-slug="onyx" data-primarycolor="#ac63ff" data-secondarycolor="#8a50cc" data-midcolor="#9b5ae6" data-selection-color="rgba(155,90,230,0.25)">
+                    <a href="case-studies/onyx/index.html" target="_blank">
+                        <h2>ONYX</h2>
+                        <h3>Project<br>Visual Audio Mixer</h3>
+                        <p>
+                            ONYX is a plyground to develop music and synths across all major platforms, including the web. Create, edit and export with support for all major audio codecs, or share the complete project online (the application is supported only on CHROME and FIREFOX).
+                            <br><br><span class="technologies">Web, C++, GPU Audio, Three.js, WebAudio</span>
+                        </p>
+                        <div class="arrow">
+                            <div class="circle"></div><img src="static/images/home-arrow.svg"><div class="spine"></div>
+                        </div>
+                    </a>
+                </li>
+            
+                <li id="constant-vr" class="page " style="--highlight-primary: #b9e132; --selection-color: rgba(185,225,50,0.25);" data-slug="constant-vr" data-primarycolor="#c5f22f" data-secondarycolor="#acd035" data-midcolor="#b9e132" data-selection-color="rgba(185,225,50,0.25)">
+                    <a>
+                        <h2>CONSTANT VR</h2>
+                        <h3>Project<br>VR Beat Game</h3>
+                        <p>
+                            Constant VR is a procedurally generated VR game for Oculus Rift and HTC Vive where audio is used for synchronised lighting effects, while travelling through a different environment with every beat.
+                            <br><br><span class="technologies">Unreal Engine 4, Rift, Vive, Vulkan, Metal, Audio, Procedural</span>
+                        </p>
+                        <div class="arrow" style="display: none;">
+                            <div class="circle"></div><img src="static/images/home-arrow.svg"><div class="spine"></div>
+                        </div>
+                    </a>
+                </li>
+            
+                <li id="triple-t" class="page " style="--highlight-primary: #f97838; --selection-color: rgba(249,120,56,0.25);" data-slug="triple-t" data-primarycolor="#ff874b" data-secondarycolor="#F26924" data-midcolor="#f97838" data-selection-color="rgba(249,120,56,0.25)">
+                    <a href="case-studies/triple-t/index.html" target="_blank">
+                        <h2>TRIPLE-T</h2>
+                        <h3>Project<br>WebGL Browser Game</h3>
+                        <p>
+                            TRIPLE-T is a new take on the classical game if TicTacToe. Built in WeGL game using Three.js, the game has support for Leap Motion Controller.
+                            <br><br><span class="technologies">WebGL, Three.js, Leap.js, Leap Motion Controller, AI</span>
+                        </p>
+                        <div class="arrow">
+                            <div class="circle"></div><img src="static/images/home-arrow.svg"><div class="spine"></div>
+                        </div>
+                    </a>
+                </li>
+                <li id="aureole" class="page " style="--highlight-primary: #f97838; --selection-color: rgba(249,120,56,0.25);" data-slug="aureole" data-primarycolor="#ff874b" data-secondarycolor="#F26924" data-midcolor="#f97838" data-selection-color="rgba(249,120,56,0.25)">
+                    <a href="case-studies/aureole/index.html" target="_blank">
+                        <h2>Aureole</h2>
+                        <h3>Project<br>WebGL Browser Game</h3>
+                        <p>
+                            AUREOLE is a simple game of enclosing blue orbs to continue the game and keep up one's energy.
+                            <br><br><span class="technologies">WebGL, Three.js</span>
+                        </p>
+                        <div class="arrow">
+                            <div class="circle"></div><img src="static/images/home-arrow.svg"><div class="spine"></div>
+                        </div>
+                    </a>
+                </li>
+                <li id="old-web-2" class="page " style="--highlight-primary: #f97838; --selection-color: rgba(249,120,56,0.25);" data-slug="old-web-2" data-primarycolor="#ff874b" data-secondarycolor="#F26924" data-midcolor="#f97838" data-selection-color="rgba(249,120,56,0.25)">
+                    <a href="case-studies/old-web-2/index.html" target="_blank">
+                        <h2>Portfolio v2.0</h2>
+                        <h3>Project<br>Personal Portfolio Website</h3>
+                        <p>
+                            My second take on self-ego!
+                            <br><br><span class="technologies">HTML5, CSS3, JS</span>
+                        </p>
+                        <div class="arrow">
+                            <div class="circle"></div><img src="static/images/home-arrow.svg"><div class="spine"></div>
+                        </div>
+                    </a>
+                </li>
+                <li id="old-web-1" class="page " style="--highlight-primary: #f97838; --selection-color: rgba(249,120,56,0.25);" data-slug="old-web-1" data-primarycolor="#ff874b" data-secondarycolor="#F26924" data-midcolor="#f97838" data-selection-color="rgba(249,120,56,0.25)">
+                    <a href="case-studies/old-web-1/index.html" target="_blank">
+                        <h2>Portfolio v1.0</h2>
+                        <h3>Project<br>Personal Portfolio Website</h3>
+                        <p>
+                            My first take on ego-satisfaction!
+                            <br><br><span class="technologies">HTML5, CSS3, JS</span>
+                        </p>
+                        <div class="arrow">
+                            <div class="circle"></div><img src="static/images/home-arrow.svg"><div class="spine"></div>
+                        </div>
+                    </a>
+                </li>
+        </ul>
     
-    <article id="p4">
-        <h3>GitHub Game Off 2016</h3>
 
-        <div class="cols">
+    <script>
+        let anchors = ["wwdc-17","wwdc-16","igf-17","github-game-off-16","lou-2","abducted","spectre-hdr","irix-pro","onyx","constant-vr","triple-t","aureole", "old-web-2", "old-web-1"];
 
-            <div class="left">
-                <div class="tagText sub">ACHIEVEMENT <br/><br/>Unreal Engine 4, Rift, Vive, Vulkan, Metal, Audio, Procedural</div>
+        Site.previousPage = Site.currentPage;
+        Site.currentPage = new Home(anchors);
+
+        Site.currentPage.firstRun = function() {
+            Site.currentPage.addListeners();
+            Site.smoothScroll.scrollToY(Site.currentPage.currentIndex * (Site.height || innerHeight));
+
+            let page = Site.currentPage.pages[Site.currentPage.currentIndex];
+            Site.currentPage.ribbonColor = {primary: Color.hexToRgb(page.dataset.primarycolor), secondary: Color.hexToRgb(page.dataset.secondarycolor)};
+            Ribbon.drawArea = {top: 0, height: innerHeight};
+            Ribbon.primaryColor = Site.currentPage.ribbonColor.primary;
+            Ribbon.secondaryColor = Site.currentPage.ribbonColor.secondary;
+            Ribbon.setMode(Ribbon.Mode.HOME);
+            Menu.logo.classList.add('fixed');
+            Menu.hireCta.classList.add('fixed');
+        }
+    </script>
 
             </div>
-
-            <p>Ranked 2nd in the 2016 GitHub Game Off Competition for CONSTANT.</p>
-
         </div>
 
-        <div class="gallery">
-            <div class="number2">
-                <div class="no">04</div>
-                <div class="rule">
-                    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-                        <path d="M0 1 L100 1" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path>
-                    </svg>
-                </div>
-                <div class="total">12</div>
-            </div>
-            <img src="aah/constant.png">
-            <div class="double">
-            </div>
-
-        </div>
-    </article>
-
-
-    <article id="p5">
-        <h3>PlayStation</h3>
-
-        <div class="cols">
-
-            <div class="left">
-                <div class="tagText sub">INTERNSHIP <br/><br/>Vulkan, C++, OpenCL, PS4, Artificial Intelligence</div>
-
-                <a class="launch" href="https://medium.com/@highestage/achieving-photorealism-using-neural-networks-fb7f924e5078" target="_blank">
-                    <div class="launchText">Visit</div>
-                    <div class="launchIcon">
-                        <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="launchIconB  highlight2" style="color: rgb(0, 140, 230);">
-                            <path d="M52 2 L98 48 Q100 50 98 52 L52 98 Q50 100 48 98 L2 52 Q0 50 2 48 L48 2 Q50 0 52 2 z" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path>
-                            <path d="M44 34 L60 50 L44 66" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path>
-                        </svg>
-
-                        <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="launchIconA  highlight1" style="color: rgb(250, 45, 55);">
-                            <circle cx="50" cy="50" r="46" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></circle>
-                            <path d="M44 34 L60 50 L44 66" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path>
-                        </svg>
-                    </div>
-                </a>
-
-            </div>
-
-            <p>Interned at PLAYSTATION / Sony Interactive Entertainment from April to October 2018. Developed a photorealism module for the ICE Rendering Engine using procedural AI via Active Foreground Neural Network. Project developed in-house using Vulkan API and C++.</p>
-
-        </div>
-
-        <div class="gallery">
-            <div class="number2">
-                <div class="no">05</div>
-                <div class="rule">
-                    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-                        <path d="M0 1 L100 1" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path>
-                    </svg>
-                </div>
-                <div class="total">12</div>
-            </div>
-            <img src="aah/playstation.jpg">
-        </div>
-    </article>
-
-
-    <article id="p6">
-        <h3>Sunside Games</h3>
-
-        <div class="cols">
-
-            <div class="left">
-                <div class="tagText sub">INTERNSHIP <br/><br/>Unreal Engine 4, iOS, macOS, Metal, C++</div>
-
-                
-                <a class="launch" href="https://store.steampowered.com/app/299580/Abducted/" target="_blank">
-                    <div class="launchText">Download</div>
-                    <div class="launchIcon">
-                        <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="launchIconB  highlight2" style="color: rgb(0, 140, 230);">
-                            <path d="M52 2 L98 48 Q100 50 98 52 L52 98 Q50 100 48 98 L2 52 Q0 50 2 48 L48 2 Q50 0 52 2 z" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path>
-                            <path d="M44 34 L60 50 L44 66" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path>
-                        </svg>
-
-                        <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="launchIconA  highlight1" style="color: rgb(250, 45, 55);">
-                            <circle cx="50" cy="50" r="46" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></circle>
-                            <path d="M44 34 L60 50 L44 66" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path>
-                        </svg>
-                    </div>
-                </a>
-            </div>
-
-            <p>Interned at SUNSIDE GAMES from February to April 2018. Worked as Level Designer and Gameplay Programmer for the game ABDUCTED, developed using Unreal Engine 4.</p>
-
-        </div>
-
-        <div class="gallery">
-            <div class="number2">
-                <div class="no">06</div>
-                <div class="rule">
-                    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-                        <path d="M0 1 L100 1" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path>
-                    </svg>
-                </div>
-                <div class="total">12</div>
-            </div>
-            <img src="aah/abducted.jpeg">
-
-        </div>
-    </article>
-
-
-    <article id="p7">
-        <h3>Spectrum HDR</h3>
-
-        <div class="cols">
-
-            <div class="left">
-                <div class="tagText sub">PROJECT <br/><br/>Swift, Metal, Metal Shaders, macOS, CoreML, GCD, Layers, OpenCL, Core Image, 64-bit</div>
-
-                <a class="launch" href="irix/index.html" target="_blank">
-                    <div class="launchText">Visit</div>
-                    <div class="launchIcon">
-                        <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="launchIconB  highlight2" style="color: rgb(0, 140, 230);">
-                            <path d="M52 2 L98 48 Q100 50 98 52 L52 98 Q50 100 48 98 L2 52 Q0 50 2 48 L48 2 Q50 0 52 2 z" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path>
-                            <path d="M44 34 L60 50 L44 66" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path>
-                        </svg>
-
-                        <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="launchIconA  highlight1" style="color: rgb(250, 45, 55);">
-                            <circle cx="50" cy="50" r="46" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></circle>
-                            <path d="M44 34 L60 50 L44 66" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path>
-                        </svg>
-                    </div>
-                </a>
-                
-            </div>
-
-            <p>SPECTRUM HDR is a HDR photo editor for macOS and Windows systems. Developed using Swift and Metal, the editor uses CoreML for ML based image edits and manipulations. </p>
-
-        </div>
-
-        <div class="gallery">
-            <div class="number2">
-                <div class="no">07</div>
-                <div class="rule">
-                    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-                        <path d="M0 1 L100 1" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path>
-                    </svg>
-                </div>
-                <div class="total">12</div>
-            </div>
-            <img src="aah/wwdcapp2_1.png">
-            <img src="aah/wwdcapp2_2.png">
-            <img src="aah/wwdcapp2_3.png">
-            <div class="double">
-            </div>
-
-        </div>
-    </article>
-
-
-    <article id="p8">
-        <h3>ONYX Create</h3>
-
-        <div class="cols">
-
-            <div class="left">
-                <div class="tagText sub">PROJECT <br/><br/>Web, C++, GPU Audio, Three.js, WebAudio</div>
-
-                <a class="launch" href="./onyx_create/index.html" target="_blank">
-                    <div class="launchText">Web</div>
-                    <div class="launchIcon">
-                        <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="launchIconB  highlight2" style="color: rgb(0, 140, 230);">
-                            <path d="M52 2 L98 48 Q100 50 98 52 L52 98 Q50 100 48 98 L2 52 Q0 50 2 48 L48 2 Q50 0 52 2 z" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path>
-                            <path d="M44 34 L60 50 L44 66" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path>
-                        </svg>
-
-                        <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="launchIconA  highlight1" style="color: rgb(250, 45, 55);">
-                            <circle cx="50" cy="50" r="46" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></circle>
-                            <path d="M44 34 L60 50 L44 66" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path>
-                        </svg>
-                    </div>
-                </a>
-
-            </div>
-
-            <p>ONYX Create is a plyground to develop music and synths across all major platforms, including the web. Create, edit and export with support for all major audio codecs, or share the complete project online (the application is supported only on CHROME and FIREFOX). </p>
-
-        </div>
-
-        <div class="gallery">
-            <div class="number2">
-                <div class="no">08</div>
-                <div class="rule">
-                    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-                        <path d="M0 1 L100 1" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path>
-                    </svg>
-                </div>
-                <div class="total">12</div>
-            </div>
-            <img src="aah/onyx_1.png">
-            <img src="aah/onyx_2.png">
-            <div class="double">
-                <img src="aah/onyx_3.png">
-                <img src="aah/onyx_4.png">
-            </div>
-
-        </div>
-    </article>
-
-
-
-    <article id="p9">
-        <h3>Constant VR</h3>
-
-        <div class="cols">
-
-            <div class="left">
-                <div class="tagText sub">PROJECT <br/><br/>Unreal Engine 4, Rift, Vive, Vulkan, Metal, Audio, Procedural</div>
-
-            </div>
-
-            <p>Constant VR is a procedurally generated VR game for Oculus Rift and HTC Vive where audio is used for synchronised lighting effects, while travelling through a different environment with every beat. </p>
-
-        </div>
-
-        <div class="gallery">
-            <div class="number2">
-                <div class="no">09</div>
-                <div class="rule">
-                    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-                        <path d="M0 1 L100 1" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path>
-                    </svg>
-                </div>
-                <div class="total">12</div>
-            </div>
-            <img src="aah/constant.png">
-            <div class="double">
-            </div>
-
-        </div>
-    </article>
-
-
-
-    <article id="p10">
-        <h3>Sapphire StreamWorks</h3>
-
-        <div class="cols">
-
-            <div class="left">
-                <div class="tagText sub">PROJECT <br/><br/>NVIDIA CUDA, OpenCL, WebGL, Vulkan, AI</div>
-
-            </div>
-
-            <p>SAPPHIRE STREAMWORKS is a cross platform streaming service for macOS, Windows, Linux, ChromeOS, iOS, Android, Windows Mobile, Xbox One X, PS VITA. The Stream can run offline when the host and client are connected to the same network, with support for major current generation consoles. Active Foreground Neural Network is used for stream and network settings optimizations without requirement of any third-party input.</p>
-
-        </div>
-
-        <div class="gallery">
-            <div class="number2">
-                <div class="no">10</div>
-                <div class="rule">
-                    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-                        <path d="M0 1 L100 1" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path>
-                    </svg>
-                </div>
-                <div class="total">12</div>
-            </div>
-            <div class="double">
-            </div>
-
-        </div>
-    </article>
-
-
-
-    <article id="p11">
-        <h3>Triple-T</h3>
-
-        <div class="cols">
-
-            <div class="left">
-                <div class="tagText sub">PROJECT <br/><br/>WebGL, Three.js, Leap.js, Leap Motion Controller, AI</div>
-                
-                <a class="launch" href="https://highestage.github.io/ttt/" target="_blank">
-                    <div class="launchText">Web</div>
-                    <div class="launchIcon">
-                        <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="launchIconB  highlight2" style="color: rgb(0, 140, 230);">
-                            <path d="M52 2 L98 48 Q100 50 98 52 L52 98 Q50 100 48 98 L2 52 Q0 50 2 48 L48 2 Q50 0 52 2 z" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path>
-                            <path d="M44 34 L60 50 L44 66" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path>
-                        </svg>
-
-                        <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="launchIconA  highlight1" style="color: rgb(250, 45, 55);">
-                            <circle cx="50" cy="50" r="46" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></circle>
-                            <path d="M44 34 L60 50 L44 66" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path>
-                        </svg>
-                    </div>
-                </a>
-                <br>
-<!--                 <a class="launch" href="https://highestage.itch.io/triple-t" target="_blank">
-                    <div class="launchText">Download</div>
-                    <div class="launchIcon">
-                        <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="launchIconB  highlight2" style="color: rgb(0, 140, 230);">
-                            <path d="M52 2 L98 48 Q100 50 98 52 L52 98 Q50 100 48 98 L2 52 Q0 50 2 48 L48 2 Q50 0 52 2 z" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path>
-                            <path d="M44 34 L60 50 L44 66" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path>
-                        </svg>
-
-                        <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="launchIconA  highlight1" style="color: rgb(250, 45, 55);">
-                            <circle cx="50" cy="50" r="46" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></circle>
-                            <path d="M44 34 L60 50 L44 66" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path>
-                        </svg>
-                    </div>
-                </a> -->
-            </div>
-
-            <p>TRIPLE-T is a new take on the classical game if TicTacToe. Built in WeGL game using Three.js, the game has support for Leap Motion Controller. Check out the project <a class="inline" href="https://github.com/highestage/Triple-T" target="_blank">here</a>.</p>
-
-        </div>
-
-        <div class="gallery">
-            <div class="number2">
-                <div class="no">11</div>
-                <div class="rule">
-                    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-                        <path d="M0 1 L100 1" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path>
-                    </svg>
-                </div>
-                <div class="total">12</div>
-            </div>
-            <img src="aah/triplet1.png">
-            <img src="aah/triplet2.png">
-        </div>
-    </article>
-    <article id="p12">
-        <h3>Aureole</h3>
-
-        <div class="cols">
-
-            <div class="left">
-                <div class="tagText sub">PROJECT <br/><br/>WebGL, Three.js</div>
-                
-                <a class="launch" href="https://highestage.github.io/aureole/" target="_blank">
-                    <div class="launchText">Web</div>
-                    <div class="launchIcon">
-                        <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="launchIconB  highlight2" style="color: rgb(0, 140, 230);">
-                            <path d="M52 2 L98 48 Q100 50 98 52 L52 98 Q50 100 48 98 L2 52 Q0 50 2 48 L48 2 Q50 0 52 2 z" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path>
-                            <path d="M44 34 L60 50 L44 66" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path>
-                        </svg>
-
-                        <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="launchIconA  highlight1" style="color: rgb(250, 45, 55);">
-                            <circle cx="50" cy="50" r="46" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></circle>
-                            <path d="M44 34 L60 50 L44 66" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path>
-                        </svg>
-                    </div>
-                </a>
-                <br>
-            </div>
-
-            <p>AUREOLE is a simple game of enclosing blue orbs to continue the game and keep up one's energy.</p>
-
-        </div>
-
-        <div class="gallery">
-            <div class="number2">
-                <div class="no">12</div>
-                <div class="rule">
-                    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-                        <path d="M0 1 L100 1" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path>
-                    </svg>
-                </div>
-                <div class="total">12</div>
-            </div>
-            <img src="aah/aureole1.png">
-        </div>
-    </article>
-
-
-    <article id="about">
-        <h3>Ayush Aggarwal</h3>
-
-        <div class="cols">
-
-            <div class="block marginAfter">
-                <div class="left">
-                    <div class="tagText sub">Develop, Design, Graphics, Audio &#8226; Unreal Engine 4, macOS, iOS, PS4, Xbox One X, Metal, Vulkan, Rubiks Cube</div>
-                </div>
-
-                <p>I'm a creative developer &amp; designer working on ONYX Create and GPU Audio. Most of work is based off of graphics APIs, mainly Metal and Vulkan. Sometimes I like to solve my Rubiks Cube (when I am not busy working).</p>
-
-            </div>
-
-            <div class="block marginAfter">
-
-                <div class="rightCol mid">
-                    <a class="inline" href="mailto:highestage@gmail.com" target="_blank">highestage@gmail.com</a><br>
-                    <a class="inline" href="http://twitter.com/highestage" target="_blank">twitter</a><span class="divide"></span>
-                    <a class="inline" href="http://github.com/highestage" target="_blank">github</a>
-                </div>
-            </div>
-
-        </div>
-
-        <div id="aboutImage">
-            <div class="features sub">
-                My work has been featured by FWA, AWWWARDS and Epic Games.<br/>Currently I am trying to work on a framework which generates cross-platform audio for macOS, Windows, Linux and We using GPUs, rather than CPUs.
-            </div>
-
-            <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="highlight2" style="color: rgb(0, 140, 230);">
-                <path d="M52 2 L98 48 Q100 50 98 52 L52 98 Q50 100 48 98 L2 52 Q0 50 2 48 L48 2 Q50 0 52 2 z" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path>
-                <path d="M35 50 L45 40 L55 50 L65 40 M35 60 L45 50 L55 60 L65 50" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="1.1" fill="none"></path>
-            </svg>
-        </div>
-
-    </article>
-
-</div>
-</body>
+        <div id="menu-modal"></div>
+
+        <script>
+        FontCssLoader.init(["https://cloud.typography.com/7471996/6732792/css/fonts.css", "/static/css/fonts.css"], function() {
+            Menu.init();
+
+            Site.init();
+            if (Site.smoothScroll) {
+                Site.smoothScroll.paginate = Site.currentPage.paginate;
+                Site.smoothScroll.paginateModifier = (Site.currentPage.paginateModifier || 1);
+            }
+
+            if (Site.currentPage && Site.currentPage.firstRun) {
+                Site.currentPage.firstRun();
+            }
+
+            Site.startRendering();
+
+            Site.prepareForIntro();
+            document.body.classList.remove('fonts-loading');
+            setTimeout(function() {
+                requestAnimationFrame(function() {
+                    Site.playIntro();
+                });
+            }, 25);
+        });
+    </script>
+    </body>
 </html>

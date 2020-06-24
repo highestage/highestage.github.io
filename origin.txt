@@ -1,0 +1,188 @@
+Uri: https://rallyinteractive.com/
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\index.htm
+Content Type: text/html
+
+Uri: https://rallyinteractive.com/static/css/rally.min.css
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\static\css\rally.min.css
+Content Type: text/css
+
+Uri: https://rallyinteractive.com/contact/
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\contact\index.htm
+Content Type: text/html
+
+Uri: https://rallyinteractive.com/studio/
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\studio\index.htm
+Content Type: text/html
+
+Uri: https://rallyinteractive.com/jobs/senior-developer/
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\jobs\senior-developer\index.htm
+Content Type: text/html
+
+Uri: https://rallyinteractive.com/jobs/design-intern/
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\jobs\design-intern\index.htm
+Content Type: text/html
+
+Uri: https://rallyinteractive.com/case-studies/wwdc-17/
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\case-studies\wwdc-17\index.htm
+Content Type: text/html
+
+Uri: https://rallyinteractive.com/case-studies/toyota-experience-center/
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\case-studies\toyota-experience-center\index.htm
+Content Type: text/html
+
+Uri: https://rallyinteractive.com/case-studies/even/
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\case-studies\even\index.htm
+Content Type: text/html
+
+Uri: https://rallyinteractive.com/case-studies/boundary-supply/
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\case-studies\boundary-supply\index.htm
+Content Type: text/html
+
+Uri: https://rallyinteractive.com/case-studies/jaybird/
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\case-studies\jaybird\index.htm
+Content Type: text/html
+
+Uri: https://rallyinteractive.com/case-studies/in-car-navigation/
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\case-studies\in-car-navigation\index.htm
+Content Type: text/html
+
+Uri: https://rallyinteractive.com/case-studies/tactical-mapping/
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\case-studies\tactical-mapping\index.htm
+Content Type: text/html
+
+Uri: https://rallyinteractive.com/case-studies/inside-design/
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\case-studies\inside-design\index.htm
+Content Type: text/html
+
+Uri: https://rallyinteractive.com/case-studies/youmap/
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\case-studies\youmap\index.htm
+Content Type: text/html
+
+Uri: https://rallyinteractive.com/case-studies/chat/
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\case-studies\chat\index.htm
+Content Type: text/html
+
+Uri: https://rallyinteractive.com/case-studies/franklin-square/
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\case-studies\franklin-square\index.htm
+Content Type: text/html
+
+Uri: https://rallyinteractive.com/case-studies/snkrs/
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\case-studies\snkrs\index.htm
+Content Type: text/html
+
+Uri: https://rallyinteractive.com/case-studies/broadcast-graphics/
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\case-studies\broadcast-graphics\index.htm
+Content Type: text/html
+
+Uri: https://rallyinteractive.com/case-studies/stance/
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\case-studies\stance\index.htm
+Content Type: text/html
+
+Uri: https://rallyinteractive.com/case-studies/global-transactions/
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\case-studies\global-transactions\index.htm
+Content Type: text/html
+
+Uri: https://rallyinteractive.com/case-studies/luxe-valet/
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\case-studies\luxe-valet\index.htm
+Content Type: text/html
+
+Uri: https://rallyinteractive.com/case-studies/epicurrence-3/
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\case-studies\epicurrence-3\index.htm
+Content Type: text/html
+
+Uri: https://rallyinteractive.com/case-studies/boston-globe/
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\case-studies\boston-globe\index.htm
+Content Type: text/html
+
+Uri: https://rallyinteractive.com/case-studies/genworth/
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\case-studies\genworth\index.htm
+Content Type: text/html
+
+Uri: https://rallyinteractive.com/case-studies/world-atlas/
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\case-studies\world-atlas\index.htm
+Content Type: text/html
+
+Uri: https://rallyinteractive.com/case-studies/espn-fc/
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\case-studies\espn-fc\index.htm
+Content Type: text/html
+
+Uri: https://rallyinteractive.com/case-studies/merchant-app/
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\case-studies\merchant-app\index.htm
+Content Type: text/html
+
+Uri: https://rallyinteractive.com/case-studies/city-guides/
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\case-studies\city-guides\index.htm
+Content Type: text/html
+
+Uri: https://rallyinteractive.com/static/js/rally.min.js
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\static\js\rally.min.js
+Content Type: text/javascript
+
+Uri: https://rallyinteractive.com/static/images/home-arrow.svg
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\static\images\home-arrow.svg
+Content Type: image/svg+xml
+
+Uri: https://rallyinteractive.com/static/images/spinner.png
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\static\images\spinner.png
+Content Type: image/png
+
+Uri: https://rallyinteractive.com/static/images/iPhone-4.png
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\static\images\iPhone-4.png
+Content Type: image/png
+
+Uri: https://rallyinteractive.com/static/images/iPhone-8.png
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\static\images\iPhone-8.png
+Content Type: image/png
+
+Uri: https://rallyinteractive.com/static/images/iPhone-X-BG.png
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\static\images\iPhone-X-BG.png
+Content Type: image/png
+
+Uri: https://rallyinteractive.com/static/images/iPhone-X.png
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\static\images\iPhone-X.png
+Content Type: image/png
+
+Uri: https://rallyinteractive.com/static/images/iPad.png
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\static\images\iPad.png
+Content Type: image/png
+
+Uri: https://rallyinteractive.com/static/images/canyon-background-large.jpg
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\static\images\canyon-background-large.jpg
+Content Type: image/jpeg
+
+Uri: https://rallyinteractive.com/static/images/arrow.svg
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\static\images\arrow.svg
+Content Type: image/svg+xml
+
+Uri: https://rallyinteractive.com/static/images/list-bullet.svg
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\static\images\list-bullet.svg
+Content Type: image/svg+xml
+
+Uri: https://rallyinteractive.com/static/images/polaroid.png
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\static\images\polaroid.png
+Content Type: image/png
+
+Uri: https://rallyinteractive.com/static/images/CA.jpg
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\static\images\CA.jpg
+Content Type: image/jpeg
+
+Uri: https://rallyinteractive.com/static/images/MP.jpg
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\static\images\MP.jpg
+Content Type: image/jpeg
+
+Uri: https://rallyinteractive.com/static/images/couch-square.jpg
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\static\images\couch-square.jpg
+Content Type: image/jpeg
+
+Uri: https://rallyinteractive.com/static/images/campfire-square.jpg
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\static\images\campfire-square.jpg
+Content Type: image/jpeg
+
+Uri: https://rallyinteractive.com/static/images/pingpong-square.jpg
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\static\images\pingpong-square.jpg
+Content Type: image/jpeg
+
+Uri: https://rallyinteractive.com/static/images/monitor-square.jpg
+File Name: c:\Downloaded Web Sites\rallyinteractive.com\static\images\monitor-square.jpg
+Content Type: image/jpeg
+

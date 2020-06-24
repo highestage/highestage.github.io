@@ -1,4 +1,0 @@
-define(["Tone/core/Tone"],function(Tone){"use strict";var Buses={};Tone.prototype.send=function(channelName,amount){if(!Buses.hasOwnProperty(channelName)){Buses[channelName]=this.context.createGain()}
-var sendKnob=this.context.createGain();sendKnob.gain.value=this.dbToGain(this.defaultArg(amount,1));this.output.chain(sendKnob,Buses[channelName]);return sendKnob};Tone.prototype.receive=function(channelName,input){if(!Buses.hasOwnProperty(channelName)){Buses[channelName]=this.context.createGain()}
-if(this.isUndef(input)){input=this.input}
-Buses[channelName].connect(input);return this};return Tone})

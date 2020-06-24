@@ -1,0 +1,209 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Triple-T</title>
+        <meta name="msapplication-TileColor" content="#ffc40d">
+        <meta name="msapplication-TileImage" content="mstile-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+        <link rel="stylesheet" type="text/css" href="css/play.css">
+    </head>
+    <body>
+        <div id="game_frame" class="fullscreen hidden">
+            <canvas id="game_canvas" class="fullscreen"></canvas>
+            <div id="ingame_crosshair"></div>
+            <div id="ingame_shape_flower"></div>
+            <div id="ingame_shape_circle"></div>
+            <div id="ingame_shape_triangle"></div>
+            <div id="ingame_shape_line"></div>
+        </div>
+        <div id="notification" class="animated hidden"></div>
+        <div id="game_over_msg" class="btn_exit">
+            <p>Press ESC to exit</p>
+        </div>
+        <div id="noleap_error">
+            <p>No LEAP Motion Controller detected</p>
+        </div>
+        <div id="main_menu">
+            <section id="main_menu_game_commands">
+                <div id="main_ui_loader" class="gmf_ui_loader" data-hide-on="jax_ready"></div>
+                <div id="hexagon_container" class="hidden" data-show-on="jax_ready">
+                    <a id="main_menu_start_hotseat" href="" class="hexagon" title="Play a local hotseat game">
+                        <span>2
+                        <br>players
+                        </span>
+                        <div class="hexagon_p60"></div>
+                        <div class="hexagon_m60"></div>
+                    </a>
+                    <a id="main_menu_start_solo_easy" href="" class="start_single_game hexagon" data-jax-action="playEasy" title="Play a single player game against the computer (easy)">
+                        <span>Solo
+                        <br>(Easy)
+                        </span>
+                        <div class="hexagon_p60"></div>
+                        <div class="hexagon_m60"></div>
+                    </a>
+                    <a id="main_menu_start_solo_normal" href="" class="locked start_single_game hexagon" data-jax-action="playNormal" title="Play a single player game against the computer (normal)">
+                        <span>Solo
+                        <br>(Normal)
+                        </span>
+                        <div class="hexagon_p60"></div>
+                        <div class="hexagon_m60"></div>
+                    </a>
+                    <a id="main_menu_start_solo_hard" href="" class="locked start_single_game hexagon" data-jax-action="playHard" title="Play a single player game against the computer (hard)">
+                        <span>Solo
+                        <br>(Hard)
+                        </span>
+                        <div class="hexagon_p60"></div>
+                        <div class="hexagon_m60"></div>
+                    </a>
+                    <a id="main_menu_start_solo_expert" href="" class="locked start_single_game hexagon" data-jax-action="playExpert" title="Play a single player game against a japanese computer player">
+                        <span>Solo
+                        <br>(Expert)
+                        </span>
+                        <div class="hexagon_p60"></div>
+                        <div class="hexagon_m60"></div>
+                    </a>
+                </div>
+            </section>
+        </div>
+        
+        <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+        <!-- normal script imports etc  -->
+        <script src="assets/jax.js"></script>      
+        <!-- Insert this line after script imports -->
+        <script>if (window.module) module = window.module;</script>
+        
+        <script type="text/javascript" src="js/lazyload.js"></script>
+        <script type="text/javascript">
+            var jax, ttt_ui, game_canvas;
+var adjust_canvas_size;
+
+
+adjust_canvas_size = function() {
+    var w = window.innerWidth,
+        h = window.innerHeight;
+    if (game_canvas) {
+        game_canvas.width = w;
+        game_canvas.height = h;
+    }
+};
+window.addEventListener('resize', adjust_canvas_size);
+LazyLoad.js(['assets/jax.js', 'js/leap-cursor.js', 'js/timbre.js'], function() {
+    if (!jQuery || typeof Jax === 'undefined' || typeof jQuery.url !== 'function') {
+        console.log("", jQuery, Jax, jQuery.url);
+        return;
+    }
+    window.debug = jQuery.url().param('dbg') || null;
+    game_canvas = document.getElementById("game_canvas");
+    adjust_canvas_size();
+    jQuery().ready(function($) {
+        try {
+            jax = new Jax.Context(game_canvas);
+        } catch (e) {
+            var $no_webgl = $('#nowebgl_error');
+            $no_webgl.html($no_webgl.html() + '<br/>' + e.message);
+            $no_webgl.show();
+            $('#main_ui_loader').addClass('hidden');
+            return;
+        }
+
+        ttt_ui = new Ttt.UI.Main(jQuery, jax, {
+            main_menu: '#main_menu',
+            game_frame: '#game_frame',
+            game_canvas: '#game_canvas',
+            game_commands: '#main_menu_game_commands',
+            notification: '#notification',
+            start_hotseat: '#main_menu_start_hotseat',
+            start_solo: '.start_single_game',
+            start_solo_easy: '#main_menu_start_solo_easy',
+            start_solo_normal: '#main_menu_start_solo_normal',
+            start_solo_hard: '#main_menu_start_solo_hard',
+            start_solo_expert: '#main_menu_start_solo_expert',
+            toggle_mute: '#ingame_widget_toggle_sound',
+            back_button: '#ingame_widget_back',
+            help_button: '#ingame_widget_help',
+            help_overlay: '#ingame_layer_help',
+            crosshair: '#ingame_crosshair',
+            noleap_error: '#noleap_error',
+            game_over_msg: '#game_over_msg',
+            btn_exit: '.btn_exit'
+        });
+        var hexagon_animation_classes = ['rotate_360', 'rotate_60', 'keystroke', 'flatten', 'brackets1', 'brackets2', 'pulsar', 'tadaaa', 'bluish', 'thinnen'];
+        var hexagon_animation_class = GMF.Util.getRandomArrayValue(hexagon_animation_classes);
+        $('#hexagon_container .hexagon:not(.locked)').addClass(hexagon_animation_class);
+        var leap_loop_opts = {
+            enableGestures: true
+        };
+        var leap_manager_opts = {
+            maxCursors: 1,
+            interactiveSelector: "#main_menu_game_commands a.hexagon:not(.locked)",
+            enableDefaultMetaGestureActions: false,
+            enableMetaGestures: false,
+            enableFrameScrolling: true,
+            enableScrollbarScrolling: false,
+            boundary: {
+                top: 350,
+                left: -100,
+                right: 100,
+                bottom: 150
+            },
+            cursorConfig: {
+                multitapEnabled: false,
+                clickDelay: 1111
+            },
+            loopConfig: leap_loop_opts
+        };
+        LeapManager.init(leap_manager_opts);
+        ttt_ui.on('game_enter', function() {
+            LeapManager.exit();
+        });
+        if (Leap && Leap.loopController) {
+            
+            Leap.loopController.on('deviceAttached', function() {
+                ttt_ui.noleap_error.hide();
+            });
+            Leap.loopController.on('deviceRemoved', function() {
+                ttt_ui.noleap_error.show();
+            });
+        }
+
+        ttt_ui.trigger('jax_ready');
+        var encodedReplay = jQuery.url().param('replay') || null;
+        if (encodedReplay) {
+            var data = {
+                controller: new Jax.ReplayGameController
+            };
+            ttt_ui.trigger('game_enter', data);
+            ttt_ui.trigger('game_start', data);
+        }
+        ttt_ui.on('game_enter', function() {
+            if (encodedReplay) return;
+            var duration = 15555;
+            var count_max = 10;
+            var count = window.localStorage.getItem('notif_intro_count') || 0;
+            count = parseInt(count);
+            if (count < count_max) {
+                window.localStorage.setItem('notif_intro_count', count + 1);
+                $('#ingame_tutorial_01').removeClass('hidden');
+                setTimeout(function() {
+                    $('#ingame_tutorial_01').addClass('hidden');
+                    $('#ingame_tutorial_02').removeClass('hidden');
+                    setTimeout(function() {
+                        $('#ingame_tutorial_02').addClass('hidden');
+                        $('#ingame_tutorial_03').removeClass('hidden');
+                        setTimeout(function() {
+                            $('#ingame_tutorial_03').addClass('hidden');
+                            $('#ingame_tutorial_04').removeClass('hidden');
+                            setTimeout(function() {
+                                $('#ingame_tutorial_04').addClass('hidden');
+                            }, duration);
+                        }, duration * 1.618);
+                    }, duration);
+                }, duration);
+            }
+        });
+    });
+}); 
+        </script>
+    </body>
+</html>
